@@ -1,0 +1,86 @@
+class TravelDataController < ApplicationController
+  # GET /travel_data
+  # GET /travel_data.json
+  def index
+    @travel_data = TravelDatum.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @travel_data }
+    end
+  end
+
+  # GET /travel_data/1
+  # GET /travel_data/1.json
+  def show
+    @travel_datum = TravelDatum.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @travel_datum }
+    end
+  end
+
+  # GET /travel_data/new
+  # GET /travel_data/new.json
+  def new
+    @travel_datum = TravelDatum.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render :json => @travel_datum }
+    end
+  end
+
+  # GET /travel_data/1/edit
+  def edit
+    @travel_datum = TravelDatum.find(params[:id])
+  end
+
+  # POST /travel_data
+  # POST /travel_data.json
+  def create
+    @travel_datum = TravelDatum.new(params[:travel_datum])
+    CalculateDistance()
+
+    respond_to do |format|
+      if @travel_datum.save
+        format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully created.' }
+        format.json { render :json => @travel_datum, :status => :created, :location => @travel_datum }
+      else
+        format.html { render :action => "new" }
+        format.json { render :json => @travel_datum.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /travel_data/1
+  # PUT /travel_data/1.json
+  def update
+    @travel_datum = TravelDatum.find(params[:id])
+
+    respond_to do |format|
+      if @travel_datum.update_attributes(params[:travel_datum])
+        format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully updated.' }
+        format.json { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.json { render :json => @travel_datum.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /travel_data/1
+  # DELETE /travel_data/1.json
+  def destroy
+    @travel_datum = TravelDatum.find(params[:id])
+    @travel_datum.destroy
+
+    respond_to do |format|
+      format.html { redirect_to travel_data_url }
+      format.json { head :ok }
+    end
+  end
+end
+
+	

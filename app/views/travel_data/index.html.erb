@@ -1,0 +1,53 @@
+<h1>Listing travel_data</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Address</th>
+    <th>School</th>
+    <th>Start Time</th>
+    <th>Distance from home</th>
+    <th>Travel time</th>
+    <th>Departure</th>
+    <th>Distance from school toffice</th>
+    <th>Time from school to ffice</th>
+    <th>Gas price</th>
+    <th>Gas total</th>
+    <th>End of business</th>
+    <th>Position</th>
+    <th>Total business time</th>
+    <th>Hourly rate</th>
+    <th>Business time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @travel_data.each do |travel_datum| %>
+  <tr>
+    <td><%= travel_datum.Date %></td>
+    <td><%= travel_datum.Address %></td>
+    <td><%= travel_datum.School %></td>
+    <td><%= travel_datum.StartTime %></td>
+    <td><%= travel_datum.DistanceFromHome %></td>
+    <td><%= travel_datum.TravelTime %></td>
+    <td><%= travel_datum.Departure %></td>
+    <td><%= travel_datum.DistanceFromSchoolToOffice %></td>
+    <td><%= travel_datum.TimeFromSchoolToOffice %></td>
+    <td><%= travel_datum.gasprice %></td>
+    <td><%= travel_datum.gastotal %></td>
+    <td><%= travel_datum.EndOfBusiness %></td>
+    <td><%= travel_datum.position %></td>
+    <td><%= travel_datum.TotalBusinessTime %></td>
+    <td><%= travel_datum.HourlyRate %></td>
+    <td><%= travel_datum.BusinessTime %></td>
+    <td><%= link_to 'Show', travel_datum %></td>
+    <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
+    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Travel Data', new_travel_datum_path %>
