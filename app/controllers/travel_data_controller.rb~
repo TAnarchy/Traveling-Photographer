@@ -41,7 +41,7 @@ class TravelDataController < ApplicationController
   # POST /travel_data.json
   def create
     @travel_datum = TravelDatum.new(params[:travel_datum])
-    CalculatDistace()
+    CalculateDistance()
 
     respond_to do |format|
       if @travel_datum.save
@@ -81,23 +81,6 @@ class TravelDataController < ApplicationController
       format.json { head :ok }
     end
   end
-end
-
-def CalculatDistace
-	String origin ="6 Birchwood ave, East Setauket, NY"
-	String destination="3500 Sunrise Highway, Great River, NY"
-	ConvertSpaces(origin)
-	ConvertSpaces(destination)
-	URLtoParse = "http://maps.googleapis.com/maps/api/distancematrix/json?origins="+origin
-	URLtoParse = URLtoParse+"&destination="+destination+"&sensor=false"
-	res = Net::HTTP.getResponse(URI(URLtoParse))
-	@travel_datum.Address = res
-	
-end
-
-def ConvertSpaces(String x)
-	x[", "]="+"
-	x[" "]="+"
 end
 
 	
