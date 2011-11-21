@@ -5,11 +5,11 @@ require 'rexml/document'
 class MyWeb
 	attr_accessor :myDuration, :myDistance
 	
-	def initialize(origin,destination)
+	def initialize(org,dest)
 		googleWebService = 'http://maps.googleapis.com/maps/api/distancematrix/xml'
 		sensor = 'false'
-		origin = stingToURLParameter(origin)
-		destination = stingToURLParameter(destination)
+		origin = stingToURLParameter(org)
+		destination = stingToURLParameter(dest)
 		units = 'imperial'
 		results_limit = 10
 		url = "#{googleWebService}?origins=#{origin}&destinations=#{destination}&units=#{units}&sensor=#{sensor}"
@@ -19,8 +19,8 @@ class MyWeb
 		  puts 'Connection error: ' + e.message
 		end
 		
-		#print xml_result_set.body
-		#print xml_result_set.to_s + "\n"
+		print xml_result_set.body
+		print xml_result_set.to_s + "\n"
 		
 		doc = REXML::Document.new(xml_result_set.body)
 		result = []
@@ -41,9 +41,10 @@ class MyWeb
 	end
 	
 	def stingToURLParameter(param)
-		param=param.gsub!(", ","+")
-		param.gsub!(" ","+")
-		return param
+		toReturn=param.clone
+		toReturn=toReturn.gsub!(", ","+")
+		toReturn.gsub!(" ","+")
+		return toReturn
 	end
 	
 end
