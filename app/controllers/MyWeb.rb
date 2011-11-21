@@ -42,7 +42,7 @@ class MyWeb
 	
 	def stingToURLParameter(param)
 		toReturn=param.clone
-		toReturn=toReturn.gsub!(", ","+")
+		toReturn.gsub!(", ","+")
 		toReturn.gsub!(" ","+")
 		return toReturn
 	end
