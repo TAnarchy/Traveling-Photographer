@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhotoTravel</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "jquery", "jquery.datatables"  %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

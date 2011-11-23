@@ -5,19 +5,19 @@
     <th>Date</th>
     <th>Address</th>
     <th>School</th>
-    <th>Starttime</th>
-    <th>Distancefromhome</th>
-    <th>Traveltime</th>
+    <th>Start Time</th>
+    <th>Distance from home</th>
+    <th>Travel time</th>
     <th>Departure</th>
-    <th>Distancefromschooltooffice</th>
-    <th>Timefromschooltooffice</th>
-    <th>Gasprice</th>
-    <th>Gastotal</th>
-    <th>Endofbusiness</th>
+    <th>Distance from school toffice</th>
+    <th>Time from school to ffice</th>
+    <th>Gas price</th>
+    <th>Gas total</th>
+    <th>End of business</th>
     <th>Position</th>
-    <th>Totalbusinesstime</th>
-    <th>Hourlyrate</th>
-    <th>Businesstime</th>
+    <th>Total business time</th>
+    <th>Hourly rate</th>
+    <th>Business time</th>
     <th></th>
     <th></th>
     <th></th>
@@ -50,4 +50,4 @@
 
 <br />
 
-<%= link_to 'New Travel datum', new_travel_datum_path %>
+<%= link_to 'New Travel Data', new_travel_datum_path %>

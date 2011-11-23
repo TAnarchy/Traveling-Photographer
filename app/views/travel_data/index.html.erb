@@ -1,6 +1,8 @@
+<script type = 'text/javascript'> $(document).ready(function(){$('#example').dataTable();})</script>
 <h1>Listing travel_data</h1>
 
-<table>
+<table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
+ <thead>
   <tr>
     <th>Date</th>
     <th>Address</th>
@@ -21,8 +23,8 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
-
+  </tr></thead>
+  <tbody>
 <% @travel_data.each do |travel_datum| %>
   <tr>
     <td><%= travel_datum.Date %></td>
@@ -46,7 +48,7 @@
     <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
-</table>
+</tbody></table>
 
 <br />
 
