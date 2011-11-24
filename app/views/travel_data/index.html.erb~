@@ -1,6 +1,23 @@
-<h1>Listing travel_data</h1>
+<script type = 'text/javascript'> $(document).ready(function(){$('#example').dataTable();})</script>
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+  }
 
-<table>
+</script>
+
+
+<h1>Listing travel_data</h1>
+<body onload="initialize()">
+<table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
+ <thead>
   <tr>
     <th>Date</th>
     <th>Address</th>
@@ -21,8 +38,8 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
-
+  </tr></thead>
+  <tbody>
 <% @travel_data.each do |travel_datum| %>
   <tr>
     <td><%= travel_datum.Date %></td>
@@ -46,7 +63,7 @@
     <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
-</table>
+</tbody></table>
 
 <br />
 
