@@ -4,7 +4,7 @@ require 'rexml/document'
 
 class MyWeb
 	attr_accessor :myDuration, :myDistance
-	
+	#test
 	def initialize(org,dest)
 		googleWebService = 'http://maps.googleapis.com/maps/api/distancematrix/xml'
 		sensor = 'false'
@@ -19,8 +19,6 @@ class MyWeb
 		  puts 'Connection error: ' + e.message
 		end
 		
-		print xml_result_set.body
-		print xml_result_set.to_s + "\n"
 		
 		doc = REXML::Document.new(xml_result_set.body)
 		result = []
