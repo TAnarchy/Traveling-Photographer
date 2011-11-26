@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116054234) do
+ActiveRecord::Schema.define(:version => 20111126201152) do
 
   create_table "constants", :force => true do |t|
     t.integer  "SetupTime"
     t.integer  "mpg"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "home_address"
   end
 
   create_table "travel_data", :force => true do |t|
