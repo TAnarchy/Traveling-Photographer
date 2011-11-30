@@ -1,0 +1,7 @@
+class ChangeHomeAdrNameBack < ActiveRecord::Migration
+  def up
+  end
+
+  def down
+  end
+end

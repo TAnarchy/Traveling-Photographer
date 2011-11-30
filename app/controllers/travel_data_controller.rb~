@@ -1,3 +1,4 @@
+require 'MyWeb'
 class TravelDataController < ApplicationController
   # GET /travel_data
   # GET /travel_data.json
@@ -41,8 +42,10 @@ class TravelDataController < ApplicationController
   # POST /travel_data.json
   def create
     @travel_datum = TravelDatum.new(params[:travel_datum])
-    CalculateDistance()
-
+    mt= MyWeb.new("6 Birchwood ave, East Setauket, NY",@travel_datum.Address)
+    splt= mt.getDistance.split(" ")
+    @travel_datum.DistanceFromHome=splt[0]
+    
     respond_to do |format|
       if @travel_datum.save
         format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully created.' }
