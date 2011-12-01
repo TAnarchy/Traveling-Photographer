@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130004248) do
+ActiveRecord::Schema.define(:version => 20111201023144) do
 
   create_table "constants", :force => true do |t|
     t.integer  "SetupTime"
@@ -26,19 +26,19 @@ ActiveRecord::Schema.define(:version => 20111130004248) do
     t.string   "School"
     t.time     "StartTime"
     t.integer  "DistanceFromHome"
-    t.string   "TravelTime"
     t.time     "Departure"
     t.integer  "DistanceFromSchoolToOffice"
-    t.string   "TimeFromSchoolToOffice"
     t.decimal  "gasprice"
     t.decimal  "gastotal"
     t.time     "EndOfBusiness"
     t.string   "position"
-    t.string   "TotalBusinessTime"
     t.decimal  "HourlyRate"
     t.string   "BusinessTime"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "TravelTime"
+    t.integer  "TimeFromSchoolToOffice"
+    t.integer  "TotalBusinessTime"
   end
 
 end

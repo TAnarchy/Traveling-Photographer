@@ -39,7 +39,11 @@
     <td><%= travel_datum.StartTime %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
     <td><%= travel_datum.TravelTime %></td>
-    <td><%= travel_datum.Departure %></td>
+    <% if defined?(travel_datum.TravelTime) %>
+    <td><%= travel_datum.StartTime- travel_datum.TravelTime.to_i.minutes %></td>
+    <% else %>
+    <td><%= travel_datum.StartTime%></td>
+    <% end %>
     <td><%= travel_datum.DistanceFromSchoolToOffice %></td>
     <td><%= travel_datum.TimeFromSchoolToOffice %></td>
     <td><%= travel_datum.gasprice %></td>
