@@ -89,7 +89,9 @@ class TravelDataController < ApplicationController
   	  @constant = Constant.find(1)
   	  mt= MyWeb.new(@constant.home_address,@travel_datum.Address)
   	  splt= mt.getDistance.split(" ")
+  	  splt2= mt.getDuration.split(" ")
   	  @travel_datum.DistanceFromHome=splt[0]
+  	  @travel_datum.TravelTime=splt2[0] 
   end
 end
 

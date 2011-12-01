@@ -1,6 +1,11 @@
-<%= require 'MyWeb' %>
+<% require 'MyWeb' %>
 <h1>Listing travel_data</h1>
 <table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
+<% mt=MyWeb.new("New York, NY","Los Angeles, CA") %>
+<% saddr=[] %>
+<% daddr=[] %>
+<% counter=0 %>
+<% googleLink ="http://maps.google.com/maps?" %>
  <thead>
   <tr>
     <th>Date</th>
@@ -26,8 +31,10 @@
   <tbody>
 <% @travel_data.each do |travel_datum| %>
   <tr>
+    <% saddr[counter]= "6 Birchwood ave, East Setauket, NY" %>
+    <% daddr[counter]= travel_datum.Address %>
     <td><%= travel_datum.Date %></td>
-    <td><%= travel_datum.Address %></td>
+    <td><a href=<%=googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>> <%= travel_datum.Address %></a></td>
     <td><%= travel_datum.School %></td>
     <td><%= travel_datum.StartTime %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
@@ -45,6 +52,7 @@
     <td><%= link_to 'Show', travel_datum %></td>
     <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
     <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% counter = counter +1 %>
   </tr>
 <% end %>
 </tbody></table>

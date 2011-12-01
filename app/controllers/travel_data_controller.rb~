@@ -42,10 +42,10 @@ class TravelDataController < ApplicationController
   # POST /travel_data.json
   def create
     @travel_datum = TravelDatum.new(params[:travel_datum])
-    mt= MyWeb.new("6 Birchwood ave, East Setauket, NY",@travel_datum.Address)
-    splt= mt.getDistance.split(" ")
-    @travel_datum.DistanceFromHome=splt[0]
     
+    updateThroughConstants
+    
+
     respond_to do |format|
       if @travel_datum.save
         format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully created.' }
@@ -61,7 +61,7 @@ class TravelDataController < ApplicationController
   # PUT /travel_data/1.json
   def update
     @travel_datum = TravelDatum.find(params[:id])
-
+    updateThroughConstants
     respond_to do |format|
       if @travel_datum.update_attributes(params[:travel_datum])
         format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully updated.' }
@@ -83,6 +83,13 @@ class TravelDataController < ApplicationController
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
     end
+  end
+  
+  def updateThroughConstants
+  	  @constant = Constant.find(1)
+  	  mt= MyWeb.new(@constant.home_address,@travel_datum.Address)
+  	  splt= mt.getDistance.split(" ")
+  	  @travel_datum.DistanceFromHome=splt[0]
   end
 end
 
