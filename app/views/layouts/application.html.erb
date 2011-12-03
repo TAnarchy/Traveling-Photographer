@@ -3,7 +3,7 @@
 <head>
   <title>PhotoTravel</title>
   <%= stylesheet_link_tag    "demo_page","demo_table","application" %>
-  <%= javascript_include_tag "jquery", "jquery.dataTables.js", "http://maps.googleapis.com/maps/api/js?sensor=false","application", :defaults %>
+  <%= javascript_include_tag "jquery", "jquery.dataTables.js","https://raw.github.com/rails/jquery-ujs/master/src/rails.js", "http://maps.googleapis.com/maps/api/js?sensor=false","application" %>
   <%= csrf_meta_tags %>
   <script type = 'text/javascript'> $(document).ready(function(){$('#example').dataTable();})</script>
 </head>
