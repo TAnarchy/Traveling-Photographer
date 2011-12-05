@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :TravelTime %><br />
-    <%= f.number_field :TravelTime %>
+    <%= f.text_field :TravelTime %>
   </div>
   <div class="field">
     <%= f.label :Departure %><br />
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :TimeFromSchoolToOffice %><br />
-    <%= f.number_field :TimeFromSchoolToOffice %>
+    <%= f.text_field :TimeFromSchoolToOffice %>
   </div>
   <div class="field">
     <%= f.label :gasprice %><br />
@@ -61,11 +61,11 @@
   </div>
   <div class="field">
     <%= f.label :position %><br />
-    <%= f.select :position, ['Master','Assistant'] %>
+    <%= f.text_field :position %>
   </div>
   <div class="field">
     <%= f.label :TotalBusinessTime %><br />
-    <%= f.number_field :TotalBusinessTime %>
+    <%= f.text_field :TotalBusinessTime %>
   </div>
   <div class="field">
     <%= f.label :HourlyRate %><br />

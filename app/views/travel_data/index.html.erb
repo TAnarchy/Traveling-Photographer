@@ -33,6 +33,7 @@
   <tr>
     <% saddr[counter]= "6 Birchwood ave, East Setauket, NY" %>
     <% daddr[counter]= travel_datum.Address %>
+    <% currUrl = googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>
     <td><%= travel_datum.Date %></td>
     <td><a href=<%=googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>> <%= travel_datum.Address %></a></td>
     <td><%= travel_datum.School %></td>

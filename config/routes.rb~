@@ -44,6 +44,7 @@ PhotoTravel::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
+  
 
   # Sample resource route within a namespace:
   #   namespace :admin do
@@ -55,7 +56,9 @@ PhotoTravel::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
    root :to => 'home#index'
-
+   match 'travel_data_destroy/:id', :to => 'travel_data#destroy'
+  
+   
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
