@@ -19,6 +19,10 @@
     <%= f.label :mpg %><br />
     <%= f.number_field :mpg %>
   </div>
+  <div class="field">
+    <%= f.label :home_address %><br />
+    <%= f.text_field :home_address %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

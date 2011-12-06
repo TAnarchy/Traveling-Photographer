@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201023144) do
+ActiveRecord::Schema.define(:version => 20111206001752) do
 
   create_table "constants", :force => true do |t|
     t.integer  "SetupTime"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20111201023144) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "home_address"
+    t.string   "officeAdr"
   end
 
   create_table "travel_data", :force => true do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20111201023144) do
     t.integer  "TravelTime"
     t.integer  "TimeFromSchoolToOffice"
     t.integer  "TotalBusinessTime"
+    t.time     "departureTime"
   end
 
 end

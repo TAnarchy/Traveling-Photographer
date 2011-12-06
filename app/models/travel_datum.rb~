@@ -1,0 +1,7 @@
+class TravelDatum < ActiveRecord::Base
+	before_save :caclFormulaFields
+	
+	def caclFormulaFields
+		
+	end
+end

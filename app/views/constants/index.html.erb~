@@ -4,7 +4,7 @@
   <tr>
     <th>Setuptime</th>
     <th>Mpg</th>
-    <th></th>
+    <th>Home Address</th>
     <th></th>
     <th></th>
   </tr>
@@ -13,6 +13,7 @@
   <tr>
     <td><%= constant.SetupTime %></td>
     <td><%= constant.mpg %></td>
+    <td><%= constant.home_address %></td>
     <td><%= link_to 'Show', constant %></td>
     <td><%= link_to 'Edit', edit_constant_path(constant) %></td>
     <td><%= link_to 'Destroy', constant, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,4 +23,6 @@
 
 <br />
 
+<% if Constant.all.count == 0 %>
 <%= link_to 'New Constant', new_constant_path %>
+<% end %>

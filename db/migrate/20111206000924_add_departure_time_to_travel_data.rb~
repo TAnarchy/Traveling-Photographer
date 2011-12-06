@@ -1,0 +1,4 @@
+class AddDepartureTimeToTravelData < ActiveRecord::Migration
+  def change
+  end
+end
