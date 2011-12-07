@@ -41,7 +41,7 @@
     <td><%= travel_datum.DistanceFromHome %></td>
     <td><%= travel_datum.TravelTime %></td>
     <% if defined?(travel_datum.TravelTime) %>
-    <td><%= travel_datum.StartTime- travel_datum.TravelTime.to_i.minutes %></td>
+    <td><%= travel_datum.Departure %></td>
     <% else %>
     <td><%= travel_datum.StartTime%></td>
     <% end %>
