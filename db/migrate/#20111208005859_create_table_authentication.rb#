@@ -1,0 +1,7 @@
+class CreateTableAuthentication < ActiveRecord::Migration
+	def change
+		create_table :authentication
+	end
+		
+		
+end

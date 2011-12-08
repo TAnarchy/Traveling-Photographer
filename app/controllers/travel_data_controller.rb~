@@ -1,4 +1,6 @@
 class TravelDataController < ApplicationController
+	http_basic_authenticate_with :name =>"UserName", :password =>"SuperPassword"
+	
   # GET /travel_data
   # GET /travel_data.json
   def index
