@@ -27,9 +27,19 @@ class MyWeb
 		@myDuration = result[0]
 		REXML::XPath.each( doc, "//distance/text") { |element2| result2 << element2.text }
 		@myDistance = result2[0]
+		
+		if @myDuration.include?("hour")
+			time =@myDuration.split(" ")
+			hours = time[0].to_i
+			minutes = time[2].to_i
+			hours = hours * 60
+			@myDuration = hours+minutes
+		end
+		
 		if @myDistance.include?(",")
 			@myDistance[","]=""
 		end
+		
 				
 	end
 	
