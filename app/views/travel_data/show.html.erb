@@ -27,7 +27,12 @@
 
 <p>
   <b>Traveltime:</b>
-  <%= @travel_datum.TravelTime %>
+  <%= @travel_datum.TravelTime.divmod(60)[0] %>:
+  <% if @travel_datum.TravelTime.divmod(60)[1] < 10 %>
+  <%="0" +(@travel_datum.TravelTime.divmod(60)[1]).to_s %>
+  <% else %>
+  <%=@travel_datum.TravelTime.divmod(60)[1] %>
+  <% end %>
 </p>
 
 <p>
@@ -47,12 +52,12 @@
 
 <p>
   <b>Gasprice:</b>
-  <%= @travel_datum.gasprice %>
+  <%= number_to_currency @travel_datum.gasprice %>
 </p>
 
 <p>
   <b>Gastotal:</b>
-  <%= @travel_datum.gastotal %>
+  <%= number_to_currency @travel_datum.gastotal %>
 </p>
 
 <p>

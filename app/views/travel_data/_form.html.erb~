@@ -28,26 +28,6 @@
     <%= f.time_select :StartTime %>
   </div>
   <div class="field">
-    <%= f.label :DistanceFromHome %><br />
-    <%= f.number_field :DistanceFromHome %>
-  </div>
-  <div class="field">
-    <%= f.label :TravelTime %><br />
-    <%= f.number_field :TravelTime %>
-  </div>
-  <div class="field">
-    <%= f.label :Departure %><br />
-    <%= f.time_select :Departure %>
-  </div>
-  <div class="field">
-    <%= f.label :DistanceFromSchoolToOffice %><br />
-    <%= f.number_field :DistanceFromSchoolToOffice %>
-  </div>
-  <div class="field">
-    <%= f.label :TimeFromSchoolToOffice %><br />
-    <%= f.number_field :TimeFromSchoolToOffice %>
-  </div>
-  <div class="field">
     <%= f.label :gasprice %><br />
     <%= f.text_field :gasprice %>
   </div>
