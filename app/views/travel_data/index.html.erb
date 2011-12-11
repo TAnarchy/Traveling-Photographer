@@ -35,7 +35,7 @@
     <% daddr[counter]= travel_datum.Address %>
     <% currUrl = googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>
     <td><%= travel_datum.Date %></td>
-    <td><a href=<%=googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>> <%= travel_datum.Address %></a></td>
+    <td><%= link_to travel_datum.Address, currUrl %> </td>
     <td><%= travel_datum.School %></td>
     <td><%= travel_datum.StartTime %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
