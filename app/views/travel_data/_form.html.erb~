@@ -32,10 +32,6 @@
     <%= f.text_field :gasprice %>
   </div>
   <div class="field">
-    <%= f.label :gastotal %><br />
-    <%= f.text_field :gastotal %>
-  </div>
-  <div class="field">
     <%= f.label :EndOfBusiness %><br />
     <%= f.time_select :EndOfBusiness %>
   </div>

@@ -1,5 +1,4 @@
 class ConstantsController < ApplicationController
-	http_basic_authenticate_with :name =>Authentication.first.username, :password =>Authentication.first.password
   # GET /constants
   # GET /constants.json
   def index

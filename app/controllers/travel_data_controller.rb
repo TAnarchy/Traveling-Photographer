@@ -80,6 +80,11 @@ class TravelDataController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def logout
+  	  @current_user= ""
+  	 redirect_to root_url
+  end
 end
 
 	

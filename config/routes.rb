@@ -59,6 +59,7 @@ PhotoTravel::Application.routes.draw do
   # just remember to delete public/index.html.
    root :to => 'home#index'
   # match 'travel_data_destroy/:id', :to => 'travel_data#destroy'
+  match '/logout', :to => 'travel_data#logout'
   
    
   # See how all your routes lay out with "rake routes"
