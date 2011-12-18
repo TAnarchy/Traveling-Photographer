@@ -4,7 +4,7 @@ class TravelDataController < ApplicationController
   # GET /travel_data
   # GET /travel_data.json
   def index
-    @travel_data = TravelDatum.all
+  	  @travel_data = TravelDatum.order("Address")
 
     respond_to do |format|
       format.html # index.html.erb
