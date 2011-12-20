@@ -1,3 +1,13 @@
+An application developed by me in Ruby on rails, currently a work in progress.
+It is made for a school photographer who travels regulary and needs to keep track
+of a variety of things including, schools traveled, distance traveled, time. Currently
+the photographer is using an Excel spreadsheet, the process is slow and tedius.
+I hope to speed up the process by creating an online connection allowing access
+anywhere, and setting up a connection to Google Maps using Google Maps web services
+requiring minimal data input.
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
