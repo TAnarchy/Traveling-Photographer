@@ -37,19 +37,19 @@
     <td><%= travel_datum.Date %></td>
     <td><%=link_to travel_datum.Address, currUrl %></td>
     <td><%= travel_datum.School %></td>
-    <td><%= travel_datum.StartTime %></td>
+    <td><%= travel_datum.StartTime.strftime("%I:%M %p") %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
     <td><%= travel_datum.TravelTime %></td>
     <% if defined?(travel_datum.TravelTime) %>
-    <td><%= travel_datum.Departure %></td>
+    <td><%= travel_datum.Departure.strftime("%I:%M %p") %></td>
     <% else %>
-    <td><%= travel_datum.StartTime%></td>
+    <td><%= travel_datum.StartTime.strftime("%I:%M %p")%></td>
     <% end %>
     <td><%= travel_datum.DistanceFromSchoolToOffice %></td>
     <td><%= travel_datum.TimeFromSchoolToOffice %></td>
     <td><%=number_to_currency travel_datum.gasprice %></td>
     <td><%=number_to_currency travel_datum.gastotal %></td>
-    <td><%= travel_datum.EndOfBusiness %></td>
+    <td><%= travel_datum.EndOfBusiness.strftime("%I:%M %p") %></td>
     <td><%= travel_datum.position %></td>
     <td><%= travel_datum.TotalBusinessTime %></td>
     <td><%= travel_datum.HourlyRate %></td>
