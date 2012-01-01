@@ -39,6 +39,10 @@
     <%= f.label :position %><br />
     <%= f.select :position, ['Master','Assistant'] %>
   </div>
+   <div class="field">
+    <%= f.label :isTravelingToOffice, "Traveling to office?" %><br />
+    <%= f.select :isTravelingToOffice, ['Yes','No'] %>
+  </div>
   <div class="field">
     <%= f.label :TotalBusinessTime, "Total Business Time:" %><br />
     <%= f.number_field :TotalBusinessTime %>

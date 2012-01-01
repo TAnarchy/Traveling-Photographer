@@ -1,6 +1,7 @@
 require 'MyWeb'
 class TravelDatum < ActiveRecord::Base
 	before_save :caclFormulaFields
+	validates :Address, :presence => true
 	
 	def caclFormulaFields
 		@constant = Constant.first

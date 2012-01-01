@@ -14,7 +14,16 @@ class TravelDatum < ActiveRecord::Base
 		 mt2= MyWeb.new(self.Address, @constant.officeAdr)
 		 self.DistanceFromSchoolToOffice= mt2.getDistance.split(" ")[0]
 		 self.TimeFromSchoolToOffice= mt2.getDuration
-		 stuff = self.gasprice*(self.DistanceFromSchoolToOffice+self.DistanceFromHome+31)
+		 if self.isTravelingToOffice== "Yes"
+		 	 mt3 = MyWeb.new(@constant.officeAdr,@constant.home_address)
+		 	 dist = mt3.getDistance.split(" ")
+		 	 dist2 = dist[0]
+		 	stuff = self.gasprice*(self.DistanceFromSchoolToOffice.to_i+self.DistanceFromHome.to_i+dist2.to_i)
+		end
+		if self.isTravelingToOffice !="Yes"
+	 	 	 stuff = self.gasprice*(self.DistanceFromHome.to_i*2)
+	 	 end
+	 	 
 		 self.gastotal= (stuff/@constant.mpg).round(2)
 	end
 end

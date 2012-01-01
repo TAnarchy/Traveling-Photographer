@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208010132) do
+ActiveRecord::Schema.define(:version => 20120101222430) do
 
   create_table "authentications", :force => true do |t|
     t.string   "username"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20111208010132) do
     t.integer  "TimeFromSchoolToOffice"
     t.integer  "TotalBusinessTime"
     t.time     "departureTime"
+    t.string   "isTravelingToOffice"
   end
 
 end

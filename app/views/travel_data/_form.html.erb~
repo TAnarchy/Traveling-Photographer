@@ -24,15 +24,15 @@
     <%= f.text_field :School %>
   </div>
   <div class="field">
-    <%= f.label :StartTime %><br />
+    <%= f.label :StartTime, "Start Time" %><br />
     <%= f.time_select :StartTime %>
   </div>
   <div class="field">
-    <%= f.label :gasprice %><br />
+    <%= f.label :gasprice, "Gas Price:" %><br />
     <%= f.text_field :gasprice %>
   </div>
   <div class="field">
-    <%= f.label :EndOfBusiness %><br />
+    <%= f.label :EndOfBusiness, "End of Business:" %><br />
     <%= f.time_select :EndOfBusiness %>
   </div>
   <div class="field">
@@ -40,18 +40,18 @@
     <%= f.select :position, ['Master','Assistant'] %>
   </div>
   <div class="field">
-    <%= f.label :TotalBusinessTime %><br />
+    <%= f.label :TotalBusinessTime, "Total Business Time:" %><br />
     <%= f.number_field :TotalBusinessTime %>
   </div>
   <div class="field">
-    <%= f.label :HourlyRate %><br />
+    <%= f.label :HourlyRate, "Hourly rate" %><br />
     <%= f.text_field :HourlyRate %>
   </div>
   <div class="field">
-    <%= f.label :BusinessTime %><br />
+    <%= f.label :BusinessTime, "Business Time" %><br />
     <%= f.text_field :BusinessTime %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Travel Entry" %>
   </div>
 <% end %>

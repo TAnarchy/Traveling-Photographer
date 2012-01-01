@@ -4,7 +4,7 @@ class TravelDataController < ApplicationController
   # GET /travel_data
   # GET /travel_data.json
   def index
-    @travel_data = TravelDatum.all
+  	  @travel_data = TravelDatum.order("Address")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,6 +79,11 @@ class TravelDataController < ApplicationController
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
     end
+  end
+  
+  def logout
+  	  @current_user= ""
+  	 redirect_to root_url
   end
 end
 
