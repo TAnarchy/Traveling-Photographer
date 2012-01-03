@@ -28,6 +28,7 @@ class TravelDataController < ApplicationController
   def new
     @travel_datum = TravelDatum.new
     @travel_datum.StartTime = Time.now.beginning_of_day + 9.hours
+    @travel_datum.EndOfBusiness = Time.now.beginning_of_day+17.hours
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,7 +47,7 @@ class TravelDataController < ApplicationController
     @travel_datum = TravelDatum.new(params[:travel_datum])
     respond_to do |format|
       if @travel_datum.save
-        format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully created.' }
+      	      format.html { redirect_to @travel_datum, :notice => 'Travel date was successfully created.' }
         format.json { render :json => @travel_datum, :status => :created, :location => @travel_datum }
       else
         format.html { render :action => "new" }

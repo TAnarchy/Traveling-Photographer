@@ -10,7 +10,7 @@ class TravelDatum < ActiveRecord::Base
 		 splt2= mt.getDuration
 		 self.DistanceFromHome=splt[0]
 		 self.TravelTime=splt2
-		 self.Departure=self.StartTime-self.TravelTime.to_i.minutes
+		 self.Departure=self.StartTime-self.TravelTime.to_i.minutes-1.hour-40.minutes
 		 mt2= MyWeb.new(self.Address, @constant.officeAdr)
 		 self.DistanceFromSchoolToOffice= mt2.getDistance.split(" ")[0]
 		 self.TimeFromSchoolToOffice= mt2.getDuration
