@@ -1,4 +1,6 @@
 class AuthenticationsController < ApplicationController
+  http_basic_authenticate_with :name =>Authentication.first.username, :password =>Authentication.first.password
+	
   # GET /authentications
   # GET /authentications.json
   def index

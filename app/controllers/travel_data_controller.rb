@@ -27,6 +27,7 @@ class TravelDataController < ApplicationController
   # GET /travel_data/new.json
   def new
     @travel_datum = TravelDatum.new
+    @travel_datum.StartTime = Time.now.beginning_of_day + 9.hours
 
     respond_to do |format|
       format.html # new.html.erb
@@ -78,6 +79,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
+     # format.js
     end
   end
   

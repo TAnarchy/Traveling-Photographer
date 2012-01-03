@@ -8,6 +8,7 @@
 <% googleLink ="http://maps.google.com/maps?" %>
  <thead>
   <tr>
+    <th>#</th>
     <th>Date</th>
     <th>Address</th>
     <th>School</th>
@@ -21,6 +22,7 @@
     <th>Gas total</th>
     <th>End of business</th>
     <th>Position</th>
+    <th>Traveling to office</th>
     <th>Total business time</th>
     <th>Hourly rate</th>
     <th>Business time</th>
@@ -34,7 +36,8 @@
     <% saddr[counter]= "6 Birchwood ave, East Setauket, NY" %>
     <% daddr[counter]= travel_datum.Address %>
     <% currUrl = googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>
-    <td><%= travel_datum.Date %></td>
+   <td><%= counter+1 %></td>
+    <td><%= travel_datum.Date.strftime("%d/%m/%Y") %></td>
     <td><%=link_to travel_datum.Address, currUrl %></td>
     <td><%= travel_datum.School %></td>
     <td><%= travel_datum.StartTime.strftime("%I:%M %p") %></td>
@@ -51,6 +54,7 @@
     <td><%=number_to_currency travel_datum.gastotal %></td>
     <td><%= travel_datum.EndOfBusiness.strftime("%I:%M %p") %></td>
     <td><%= travel_datum.position %></td>
+    <td><%= travel_datum.isTravelingToOffice %></td>
     <td><%= travel_datum.TotalBusinessTime %></td>
     <td><%= travel_datum.HourlyRate %></td>
     <td><%= travel_datum.BusinessTime %></td>
