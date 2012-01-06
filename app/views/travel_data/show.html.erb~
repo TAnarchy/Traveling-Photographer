@@ -16,17 +16,17 @@
 </p>
 
 <p>
-  <b>Starttime:</b>
+  <b>Start Time:</b>
   <%= @travel_datum.StartTime %>
 </p>
 
 <p>
-  <b>Distancefromhome:</b>
+  <b>Distance From Home:</b>
   <%= @travel_datum.DistanceFromHome %>
 </p>
 
 <p>
-  <b>Traveltime:</b>
+  <b>Travel Time:</b>
   <%= @travel_datum.TravelTime.divmod(60)[0] %>:
   <% if @travel_datum.TravelTime.divmod(60)[1] < 10 %>
   <%="0" +(@travel_datum.TravelTime.divmod(60)[1]).to_s %>
@@ -41,27 +41,27 @@
 </p>
 
 <p>
-  <b>Distancefromschooltooffice:</b>
+  <b>Distance From School to Office:</b>
   <%= @travel_datum.DistanceFromSchoolToOffice %>
 </p>
 
 <p>
-  <b>Timefromschooltooffice:</b>
+  <b>Time From School to Office:</b>
   <%= @travel_datum.TimeFromSchoolToOffice %>
 </p>
 
 <p>
-  <b>Gasprice:</b>
+  <b>Gas Price:</b>
   <%= number_to_currency @travel_datum.gasprice %>
 </p>
 
 <p>
-  <b>Gastotal:</b>
+  <b>Gas total:</b>
   <%= number_to_currency @travel_datum.gastotal %>
 </p>
 
 <p>
-  <b>Endofbusiness:</b>
+  <b>End of Business:</b>
   <%= @travel_datum.EndOfBusiness %>
 </p>
 
@@ -71,17 +71,17 @@
 </p>
 
 <p>
-  <b>Totalbusinesstime:</b>
+  <b>Total Business TIme:</b>
   <%= @travel_datum.TotalBusinessTime %>
 </p>
 
 <p>
-  <b>Hourlyrate:</b>
+  <b>Hourly rate:</b>
   <%= @travel_datum.HourlyRate %>
 </p>
 
 <p>
-  <b>Businesstime:</b>
+  <b>Business Time:</b>
   <%= @travel_datum.BusinessTime %>
 </p>
 

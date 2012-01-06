@@ -17,7 +17,7 @@
 
 <p>
   <b>Start Time:</b>
-  <%= @travel_datum.StartTime %>
+  <%= @travel_datum.StartTime.strftime("%I:%M %p") %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 <p>
   <b>Departure:</b>
-  <%= @travel_datum.Departure %>
+  <%= @travel_datum.Departure.strftime("%I:%M %p") %>
 </p>
 
 <p>
@@ -62,7 +62,7 @@
 
 <p>
   <b>End of Business:</b>
-  <%= @travel_datum.EndOfBusiness %>
+  <%= @travel_datum.EndOfBusiness.strftime("%I:%M %p") %>
 </p>
 
 <p>
