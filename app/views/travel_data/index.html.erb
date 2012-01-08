@@ -32,7 +32,7 @@
   </tr></thead>
   <tbody>
 <% @travel_data.each do |travel_datum| %>
-  <tr>
+  <tr id=<%= travel_datum.id %>>
     <% saddr[counter]= "6 Birchwood ave, East Setauket, NY" %>
     <% daddr[counter]= travel_datum.Address %>
     <% currUrl = googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>
@@ -60,7 +60,7 @@
     <td><%= travel_datum.BusinessTime %></td>
     <td><%= link_to 'Show', travel_datum %></td>
     <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
-    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete%></td>
+    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete, :remote=>:true%></td>
     <% counter = counter +1 %>
   </tr>
 <% end %>

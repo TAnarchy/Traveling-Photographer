@@ -80,6 +80,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
+      format.js
      # format.js
     end
   end

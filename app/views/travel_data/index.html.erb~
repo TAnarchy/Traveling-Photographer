@@ -60,7 +60,7 @@
     <td><%= travel_datum.BusinessTime %></td>
     <td><%= link_to 'Show', travel_datum %></td>
     <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
-    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete%></td>
     <% counter = counter +1 %>
   </tr>
 <% end %>

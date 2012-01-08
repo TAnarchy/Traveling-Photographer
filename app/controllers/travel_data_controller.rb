@@ -75,6 +75,7 @@ class TravelDataController < ApplicationController
   # DELETE /travel_data/1.json
   def destroy
     @travel_datum = TravelDatum.find(params[:id])
+    @destroyID = @travel_datum.id
     @travel_datum.destroy
 
     respond_to do |format|
