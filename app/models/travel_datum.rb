@@ -31,4 +31,5 @@ class TravelDatum < ActiveRecord::Base
 		 busMin2 = (busMin/60).to_f
 		 self.HourlyRate=(125/(busHours+busMin2)).to_f.round(2)
 	end
+	#test
 end

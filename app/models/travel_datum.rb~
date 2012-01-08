@@ -25,5 +25,10 @@ class TravelDatum < ActiveRecord::Base
 	 	 end
 	 	 
 		 self.gastotal= (stuff/@constant.mpg).round(2)
+		 busHours =(self.EndOfBusiness.hour-self.Departure.hour).to_f
+		 busMin = ((self.EndOfBusiness.min-self.Departure.min).abs).to_f
+		 #self.HourlyRate= busMin*100/60
+		 busMin2 = (busMin/60).to_f
+		 self.HourlyRate=(125/(busHours+busMin2)).to_f.round(2)
 	end
 end
