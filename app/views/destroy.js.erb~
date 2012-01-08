@@ -1,2 +1,0 @@
-$('#<%= dom_id(@travel_datum) %>').hide();
-
