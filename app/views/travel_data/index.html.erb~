@@ -1,6 +1,11 @@
 <% require 'MyWeb' %>
 <h1>Travel Data</h1>
 <table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
+<% mt=MyWeb.new("New York, NY","Los Angeles, CA") %>
+<% saddr=[] %>
+<% daddr=[] %>
+<% counter=0 %>
+<% googleLink ="http://maps.google.com/maps?" %>
  <thead>
   <tr>
     <th>#</th>
@@ -26,11 +31,14 @@
     <th></th>
   </tr></thead>
   <tbody>
-<% @travel_data.each_with_index do |travel_datum, counter| %>
+<% @travel_data.each do |travel_datum| %>
   <tr id=<%= travel_datum.id %>>
-    <td><%= counter+1 %></td>
+    <% saddr[counter]= "6 Birchwood ave, East Setauket, NY" %>
+    <% daddr[counter]= travel_datum.Address %>
+    <% currUrl = googleLink+"saddr="+mt.stingToURLParameter(saddr[counter])+"&daddr="+mt.stingToURLParameter(daddr[counter]) %>
+   <td><%= counter+1 %></td>
     <td><%= travel_datum.Date.strftime("%d/%m/%Y") %></td>
-    <td><%=link_to travel_datum.Address, get_directions_url(travel_datum.Address) %></td>
+    <td><%=link_to travel_datum.Address, currUrl %></td>
     <td><%= travel_datum.School %></td>
     <td><%= travel_datum.StartTime.strftime("%I:%M %p") %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
@@ -53,6 +61,7 @@
     <td><%= link_to 'Show', travel_datum %></td>
     <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
     <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete, :remote=>:true%></td>
+    <% counter = counter +1 %>
   </tr>
 <% end %>
 </tbody></table>
