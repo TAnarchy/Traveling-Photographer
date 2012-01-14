@@ -28,7 +28,6 @@ class GoogleMapsWebServicesWrapper
 		
   def parse_xml
     doc = REXML::Document.new(@xml_result_set.body)
-    puts @xml_result_set.body
     result = []
     result2 = []
     REXML::XPath.each( doc, "//duration/text") { |element| result << element.text }
