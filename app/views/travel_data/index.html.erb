@@ -28,12 +28,12 @@
 <% @travel_data.each_with_index do |travel_datum, counter| %>
   <tr id=<%= travel_datum.id %>>
     <td><%= counter+1 %></td>
-    <td><%= travel_datum.Date.strftime("%m/%d/%Y") %></td>
+    <td><%= travel_datum.date.strftime("%m/%d/%Y") %></td>
     <td><%=link_to travel_datum.Address, get_directions_url(travel_datum.Address) %></td>
     <td><%= travel_datum.School %></td>
     <td><%= travel_datum.StartTime.strftime("%I:%M %p") %></td>
     <td><%= travel_datum.DistanceFromHome %></td>
-    <td><%= travel_datum.TravelTime %></td>
+    <td><%= travel_datum.formatted_travel_time %></td>
     <% if defined?(travel_datum.TravelTime) %>
     <td><%= travel_datum.Departure.strftime("%I:%M %p") %></td>
     <% else %>

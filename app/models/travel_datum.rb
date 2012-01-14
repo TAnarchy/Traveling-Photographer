@@ -29,4 +29,15 @@ class TravelDatum < ActiveRecord::Base
    busMin2 = (busMin/60).to_f
    self.HourlyRate=(125/(busHours+busMin2)).to_f.round(2)
   end
+  
+  def formatted_travel_time
+  	to_return = self.TravelTime.divmod(60)[0].to_s
+  	if self.TravelTime.divmod(60)[1] < 10
+      to_return=to_return+":0" +(self.TravelTime.divmod(60)[1]).to_s
+    else
+      to_return=to_return+":"+self.TravelTime.divmod(60)[1].to_s
+    end 
+    to_return
+  end
+  
 end

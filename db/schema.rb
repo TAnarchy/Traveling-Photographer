@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120101222430) do
+ActiveRecord::Schema.define(:version => 20120114181611) do
 
   create_table "authentications", :force => true do |t|
     t.string   "username"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120101222430) do
   end
 
   create_table "travel_data", :force => true do |t|
-    t.date     "Date"
+    t.date     "date"
     t.string   "Address"
     t.string   "School"
     t.time     "StartTime"

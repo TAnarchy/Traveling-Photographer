@@ -2,7 +2,7 @@
 
 <p>
   <b>Date:</b>
-  <%= @travel_datum.Date %>
+  <%= @travel_datum.date %>
 </p>
 
 <p>
@@ -27,12 +27,7 @@
 
 <p>
   <b>Travel Time:</b>
-  <%= @travel_datum.TravelTime.divmod(60)[0] %>:
-  <% if @travel_datum.TravelTime.divmod(60)[1] < 10 %>
-  <%="0" +(@travel_datum.TravelTime.divmod(60)[1]).to_s %>
-  <% else %>
-  <%=@travel_datum.TravelTime.divmod(60)[1] %>
-  <% end %>
+  <%=@travel_datum.formatted_travel_time %>
 </p>
 
 <p>
