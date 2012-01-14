@@ -4,7 +4,7 @@ class TravelDataController < ApplicationController
   # GET /travel_data
   # GET /travel_data.json
   def index
-  	  @travel_data = TravelDatum.order("Date")
+  	@travel_data = TravelDatum.order("Date")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,8 +27,8 @@ class TravelDataController < ApplicationController
   # GET /travel_data/new.json
   def new
     @travel_datum = TravelDatum.new
-    @travel_datum.StartTime = Time.now.beginning_of_day + 9.hours
-    @travel_datum.EndOfBusiness = Time.now.beginning_of_day+17.hours
+    @travel_datum.start_time = Time.now.beginning_of_day + 9.hours
+    @travel_datum.end_of_business_time = Time.now.beginning_of_day+17.hours
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +47,7 @@ class TravelDataController < ApplicationController
     @travel_datum = TravelDatum.new(params[:travel_datum])
     respond_to do |format|
       if @travel_datum.save
-      	      format.html { redirect_to @travel_datum, :notice => 'Travel date was successfully created.' }
+      	format.html { redirect_to @travel_datum, :notice => 'Travel date was successfully created.' }
         format.json { render :json => @travel_datum, :status => :created, :location => @travel_datum }
       else
         format.html { render :action => "new" }
@@ -82,13 +82,12 @@ class TravelDataController < ApplicationController
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
       format.js
-     # format.js
     end
   end
   
   def logout
-  	  @current_user= ""
-  	 redirect_to root_url
+    @current_user= ""
+    redirect_to root_url
   end
 end
 

@@ -1,14 +1,14 @@
 module TravelDataHelper
 	def get_directions_url(destinationAddress)
-		googleLink ="http://maps.google.com/maps?"
-		currUrl = googleLink+"saddr="+stingToURLParameter(Constant.first.home_address)
-		currUrl= currUrl+"&daddr="+stingToURLParameter(destinationAddress)
+	  google_link ="http://maps.google.com/maps?"
+	  current_url = google_link+"saddr="+string_to_url_parameter(Constant.first.home_address)
+	  current_url= current_url+"&daddr="+string_to_url_parameter(destinationAddress)
 	end
 	
-	def stingToURLParameter(param)
-		toReturn=param.clone
-		toReturn.gsub!(", ","+")
-		toReturn.gsub!(" ","+")
-		return toReturn
+	def string_to_url_parameter(param)
+	  to_return=param.clone
+	  to_return.gsub!(", ","+")
+	  to_return.gsub!(" ","+")
+	  to_return
 	end
 end

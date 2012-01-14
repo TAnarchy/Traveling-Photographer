@@ -16,40 +16,36 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :Address %><br />
-    <%= f.text_field :Address %>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :School %><br />
-    <%= f.text_field :School %>
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
   </div>
   <div class="field">
-    <%= f.label :StartTime, "Start Time" %><br />
-    <%= f.time_select :StartTime %>
+    <%= f.label :start_time, "Start Time" %><br />
+    <%= f.time_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :gasprice, "Gas Price:" %><br />
-    <%= f.text_field :gasprice %>
+    <%= f.label :gas_price, "Gas Price:" %><br />
+    <%= f.text_field :gas_price %>
   </div>
   <div class="field">
-    <%= f.label :EndOfBusiness, "End of Business:" %><br />
-    <%= f.time_select :EndOfBusiness %>
+    <%= f.label :end_of_business_time, "End of Business:" %><br />
+    <%= f.time_select :end_of_business_time %>
   </div>
   <div class="field">
-    <%= f.label :position %><br />
-    <%= f.select :position, ['Master','Assistant'] %>
+    <%= f.label :master_or_assistant, "Position" %><br />
+    <%= f.select :master_or_assistant, ['Master','Assistant'] %>
   </div>
    <div class="field">
-    <%= f.label :isTravelingToOffice, "Traveling to office?" %><br />
-    <%= f.select :isTravelingToOffice, ['Yes','No'] %>
+    <%= f.label :is_traveling_to_office, "Traveling to office?" %><br />
+    <%= f.select :is_traveling_to_office, ['Yes','No'] %>
   </div>
   <div class="field">
     <%= f.label :TotalBusinessTime, "Total Business Time:" %><br />
-    <%= f.number_field :TotalBusinessTime %>
-  </div>
-  <div class="field">
-    <%= f.label :BusinessTime, "Business Time" %><br />
-    <%= f.text_field :BusinessTime %>
+    <%= f.number_field :total_business_time %>
   </div>
   <div class="actions">
     <%= f.submit "Create Travel Entry" %>

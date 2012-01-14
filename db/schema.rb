@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114181611) do
+ActiveRecord::Schema.define(:version => 20120114195238) do
 
   create_table "authentications", :force => true do |t|
     t.string   "username"
@@ -30,25 +30,24 @@ ActiveRecord::Schema.define(:version => 20120114181611) do
 
   create_table "travel_data", :force => true do |t|
     t.date     "date"
-    t.string   "Address"
-    t.string   "School"
-    t.time     "StartTime"
-    t.integer  "DistanceFromHome"
-    t.time     "Departure"
-    t.integer  "DistanceFromSchoolToOffice"
-    t.decimal  "gasprice"
-    t.decimal  "gastotal"
-    t.time     "EndOfBusiness"
-    t.string   "position"
-    t.decimal  "HourlyRate"
-    t.string   "BusinessTime"
+    t.string   "address"
+    t.string   "school"
+    t.time     "start_time"
+    t.integer  "distance_from_home"
+    t.time     "departure"
+    t.integer  "distance_from_school_to_office"
+    t.decimal  "gas_price"
+    t.decimal  "total_trip_gas_cost"
+    t.time     "end_of_business_time"
+    t.string   "master_or_assistant"
+    t.decimal  "hourly_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "TravelTime"
-    t.integer  "TimeFromSchoolToOffice"
-    t.integer  "TotalBusinessTime"
-    t.time     "departureTime"
-    t.string   "isTravelingToOffice"
+    t.integer  "home_to_school_travel_time"
+    t.integer  "time_from_school_to_office"
+    t.integer  "total_business_time"
+    t.time     "departure_time"
+    t.string   "is_traveling_to_office"
   end
 
 end

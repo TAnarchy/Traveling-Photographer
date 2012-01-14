@@ -7,84 +7,80 @@
 
 <p>
   <b>Address:</b>
-  <%= @travel_datum.Address %>
+  <%= @travel_datum.address %>
 </p>
 
 <p>
   <b>School:</b>
-  <%= @travel_datum.School %>
+  <%= @travel_datum.school %>
 </p>
 
 <p>
   <b>Start Time:</b>
-  <%= @travel_datum.StartTime.strftime("%I:%M %p") %>
+  <%= @travel_datum.start_time.strftime("%I:%M %p") %>
 </p>
 
 <p>
   <b>Distance From Home:</b>
-  <%= @travel_datum.DistanceFromHome %>
+  <%= @travel_datum.distance_from_home %>
 </p>
 
 <p>
-  <b>Travel Time:</b>
-  <%=@travel_datum.formatted_travel_time %>
+  <b>Home to school travel time:</b>
+  <%=@travel_datum.formatted_home_to_school_travel_time %>
 </p>
 
 <p>
   <b>Departure:</b>
-  <%= @travel_datum.Departure.strftime("%I:%M %p") %>
+  <%= @travel_datum.departure.strftime("%I:%M %p") %>
 </p>
 
 <p>
   <b>Distance From School to Office:</b>
-  <%= @travel_datum.DistanceFromSchoolToOffice %>
+  <%= @travel_datum.distance_from_school_to_office %>
 </p>
 
 <p>
   <b>Time From School to Office:</b>
-  <%= @travel_datum.TimeFromSchoolToOffice %>
+  <%= @travel_datum.formatted_school_to_office_travel_time %>
 </p>
 
 <p>
   <b>Gas Price:</b>
-  <%= number_to_currency @travel_datum.gasprice %>
+  <%= number_to_currency @travel_datum.gas_price %>
 </p>
 
 <p>
   <b>Gas total:</b>
-  <%= number_to_currency @travel_datum.gastotal %>
+  <%= number_to_currency @travel_datum.total_trip_gas_cost %>
 </p>
 
 <p>
   <b>End of Business:</b>
-  <%= @travel_datum.EndOfBusiness.strftime("%I:%M %p") %>
+  <%= @travel_datum.end_of_business_time.strftime("%I:%M %p") %>
 </p>
 
 <p>
   <b>Position:</b>
-  <%= @travel_datum.position %>
+  <%= @travel_datum.master_or_assistant %>
 </p>
 
 
 <p>
   <b>Traveling to office:</b>
-  <%= @travel_datum.isTravelingToOffice %>
+  <%= @travel_datum.is_traveling_to_office %>
 </p>
 
 <p>
-  <b>Total Business TIme:</b>
-  <%= @travel_datum.TotalBusinessTime %>
+  <b>Total Business Time:</b>
+  <%= @travel_datum.total_business_time %>
 </p>
 
 <p>
   <b>Hourly rate:</b>
-  <%= @travel_datum.HourlyRate %>
+  <%= @travel_datum.hourly_rate %>
 </p>
 
-<p>
-  <b>Business Time:</b>
-  <%= @travel_datum.BusinessTime %>
-</p>
 
 
 <%= link_to 'Edit', edit_travel_datum_path(@travel_datum) %> |
