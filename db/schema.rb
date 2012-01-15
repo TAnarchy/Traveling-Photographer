@@ -10,16 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120115123702) do
-
-  create_table "constants", :force => true do |t|
-    t.integer  "SetupTime"
-    t.integer  "mpg"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "home_address"
-    t.string   "officeAdr"
-  end
+ActiveRecord::Schema.define(:version => 20120115160108) do
 
   create_table "travel_data", :force => true do |t|
     t.date     "date"
@@ -41,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20120115123702) do
     t.integer  "total_business_time"
     t.time     "departure_time"
     t.string   "is_traveling_to_office"
+  end
+
+  create_table "trip_independent_infos", :force => true do |t|
+    t.integer  "setup_time"
+    t.integer  "mpg"
+    t.string   "home_address"
+    t.string   "office_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

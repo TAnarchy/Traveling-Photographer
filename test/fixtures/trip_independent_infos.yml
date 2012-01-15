@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  setup_time: 1
+  mpg: 1
+  home_address: MyString
+  office_address: MyString
+
+two:
+  setup_time: 1
+  mpg: 1
+  home_address: MyString
+  office_address: MyString

@@ -1,0 +1,29 @@
+<h1>Listing trip_independent_infos</h1>
+
+<table>
+  <tr>
+    <th>Setup time</th>
+    <th>Mpg</th>
+    <th>Home address</th>
+    <th>Office address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trip_independent_infos.each do |trip_independent_info| %>
+  <tr>
+    <td><%= trip_independent_info.setup_time %></td>
+    <td><%= trip_independent_info.mpg %></td>
+    <td><%= trip_independent_info.home_address %></td>
+    <td><%= trip_independent_info.office_address %></td>
+    <td><%= link_to 'Show', trip_independent_info %></td>
+    <td><%= link_to 'Edit', edit_trip_independent_info_path(trip_independent_info) %></td>
+    <td><%= link_to 'Destroy', trip_independent_info, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trip independent info', new_trip_independent_info_path %>

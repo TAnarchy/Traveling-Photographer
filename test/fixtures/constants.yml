@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  SetupTime: 1
-  mpg: 1
-
-two:
-  SetupTime: 1
-  mpg: 1

@@ -1,9 +1,7 @@
 PhotoTravel::Application.routes.draw do
+  resources :trip_independent_infos
+
   resources :users
-
-  resources :authentications
-
-  resources :constants
 
   resources :travel_data
 
