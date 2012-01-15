@@ -10,14 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114195238) do
-
-  create_table "authentications", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120115123702) do
 
   create_table "constants", :force => true do |t|
     t.integer  "SetupTime"
@@ -48,6 +41,13 @@ ActiveRecord::Schema.define(:version => 20120114195238) do
     t.integer  "total_business_time"
     t.time     "departure_time"
     t.string   "is_traveling_to_office"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

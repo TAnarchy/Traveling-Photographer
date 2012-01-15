@@ -1,4 +1,6 @@
 PhotoTravel::Application.routes.draw do
+  resources :users
+
   resources :authentications
 
   resources :constants
