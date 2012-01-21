@@ -1,0 +1,275 @@
+commit 419f8919cc004fc24e5d90ed04f65a81c74a84ab
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sun Jan 15 11:20:05 2012 -0500
+
+    Replaced Constants Model with TravelIndependentInfos model
+
+commit 2cd1c84d136eb73837982aef4c34900b2fbeab1e
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 14 20:46:51 2012 -0500
+
+    Replaced the authentication model with user
+
+commit 3e64efde511791a9c2b0f4b9b5c7add2a2e6a24c
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 14 15:37:53 2012 -0500
+
+    removed config/routes.rb~ file
+
+commit 3957232af3c6dc23418124234ef87195468196ed
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 14 15:35:51 2012 -0500
+
+    Major code clean up, travel data almost fully cleaned up
+
+commit 029265619705ac7cd62589e2e32933e4fa736a62
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 14 14:06:00 2012 -0500
+
+    Minor scheme modifications, changed the logic for displaying time, moved from view to model
+
+commit e624a70fe7eb488e23e69f8f57c69f2b45ae8526
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 14 13:14:42 2012 -0500
+
+    Migration files clean up
+
+commit 5e3fff525165f85e1dd27251cb0474fccf48ca91
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Fri Jan 13 20:38:51 2012 -0500
+
+    clear one more file
+
+commit 1f79c1178ef35066258ab67592928df0289a9d5a
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Fri Jan 13 20:37:50 2012 -0500
+
+    Major file cleanup
+
+commit a506bfffc9d5c500d9917e1c582194ada8f1c961
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Fri Jan 13 20:29:05 2012 -0500
+
+    Code clean up
+
+commit d66f403fa497aeef8848a3df10e4fbffd863bf16
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Jan 10 20:10:21 2012 -0500
+
+    more clean up, removed extra MyWebs
+
+commit 63711d3a73737a1d9652f444030ca2ee3bc6a42e
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Jan 10 20:08:09 2012 -0500
+
+    Cleaned up some files
+
+commit c21b0d3ff070d4d38a8cefc0527b6e4ed8e39f20
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 23:16:07 2012 -0500
+
+    Clean
+
+commit e33c0012c339b2f42b563c29fbb963e97289d4fb
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 23:12:14 2012 -0500
+
+    Cleaned up view, fixed gitignore brief test
+
+commit 9d23e96b1c4e2bf837175cbd45932808aaa31f28
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 23:10:31 2012 -0500
+
+    Cleaned up view, fixed gitignore
+
+commit 4576a031b77a938816fcc7d3c85f9b7d8e692ff1
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 23:06:50 2012 -0500
+
+    Cleaned up code in travel_datum view
+
+commit dbf84717d64c68f5b99e18c431327792d4f868d6
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 20:33:23 2012 -0500
+
+    Removed a bunch of garbage files2
+
+commit 28a10ff60ef5faebb4f17a0d5f9f58c87ed1fb80
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 20:33:02 2012 -0500
+
+    Removed a bunch of garbage files
+
+commit fed98b1e0ee535bc1be0c021ee2a7e143ea2c060
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 20:22:45 2012 -0500
+
+    Got AJAX to work on Delete
+
+commit 07edeab589115ee528133c56685f5c572d60725a
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Jan 7 15:53:57 2012 -0500
+
+    Hourly rate now self caluclated
+
+commit 4d1daf8ab05dd750f14d731479711f2644619123
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Jan 2 19:59:17 2012 -0800
+
+    Minor fixes, added preparation time etc
+
+commit a3c1ef21a4ed6f8f378a7c7c406214f4bc3baaa5
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Jan 2 16:03:41 2012 -0800
+
+    Fixed some time defaults
+
+commit c0e4a5ae2fc896312c31a73d9e49827276551bae
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sun Jan 1 15:01:31 2012 -0800
+
+    Date formatting changed on main page, added is Traveling to office field, modified gas total to be calculated based on that field
+
+commit 570563f035d9c45debaba677c96fd1c9cf24aa92
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Fri Jan 6 12:49:17 2012 -0800
+
+    Fixed time formatting in travel data show
+
+commit ac33214c362855e7f7a3624f40eabae2150cf682
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Dec 28 17:19:19 2011 -0800
+
+    gemfile stuff
+
+commit 19c6b4e3996f73a0f83e7af378521fbf89db124e
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Dec 28 15:28:12 2011 -0800
+
+    back to sqlite really
+
+commit e93b699b67e05cc8f22b30432ebbb9fb4d242ad6
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Dec 28 15:25:28 2011 -0800
+
+    Back to SQLite
+
+commit c537da9d89de71ee53f9c2fb764d88fb4fc9fb80
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Dec 28 15:11:27 2011 -0800
+
+    postgre
+
+commit 94f65731bebf914d9a36e48f912e8810b22beac9
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Dec 19 16:38:38 2011 -0800
+
+    Fixed readme
+
+commit 7e9862a894abfa894f8fb794da50d0c8ee87f6d9
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Dec 19 16:36:20 2011 -0800
+
+    removed a bunch of files, trying to delete on github
+
+commit 89ec81ea3ebfdfd375027559ffb58d2431753e9b
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Dec 19 16:33:26 2011 -0800
+
+    Fixed some date formatting
+
+commit e37f7c241af8f4203e81c950e2a2ecf03c5b327e
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Dec 17 17:19:47 2011 -0800
+
+    pagination kind of works
+
+commit e74ab54262c37b10486970517130778108f62ab8
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Dec 13 16:46:00 2011 -0800
+
+    Fixed a bunch of labels
+
+commit aca43b2f4b47ff310b6c7a1e5f21e9d04e80ab5c
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sun Dec 11 10:30:16 2011 -0800
+
+    A variety of fixes, mostly to gas price, gastotal now auto-calculated
+
+commit b9078bb2423dc6af463fa936b33d589df4f6bfbc
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sun Dec 11 09:43:43 2011 -0800
+
+    Fixed link in view
+
+commit f99630232ce47408bcfacd4551445bd2517239ea
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Fri Dec 9 09:04:48 2011 -0800
+
+    One more logic error, all travel time and distance is now calculated correctly if under a day
+
+commit df1da504a7a66251a1daf4b420e9eb16855779f7
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Thu Dec 8 20:34:44 2011 -0800
+
+    Time logic error fixed, travel time now displays correctly if longer then 1 hour
+
+commit 3f2d467b4761cfe63a829d2ad2c911c09b01f705
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Thu Dec 8 18:44:18 2011 -0800
+
+    Minor logic fix, calculates Distance from home to school correctly for large distances, more to come
+
+commit 3ef8f47f106e43db256a368946c8a4c5a3cd506d
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Dec 7 17:14:00 2011 -0800
+
+    Basic authentication added, authentication table added
+
+commit f9a212f9d85e4b8cc5d1367be787c3c29583b244
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Dec 6 17:38:54 2011 -0800
+
+    Fixed application.js and javascript calls, removed the legacy libraries
+
+commit 0bae3f686e178de4f0d5493b543d1592ca928bfa
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Dec 5 16:39:40 2011 -0800
+
+    Thin controller fat model, modification, still doesn't work properly, but will
+
+commit 1dbba6b1f8d08fbb93a3b6f460e00bcadf7087a7
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Mon Dec 5 14:11:48 2011 -0800
+
+    Minor changes to the form
+
+commit 203d94d5f94a6bbef0765bb6818c2ba3d4988d7d
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Sat Dec 3 07:00:31 2011 -0800
+
+    Fixed the delete by including rail.js
+
+commit 79813cee02af10d9154172024e3bc8ceceb43f67
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Nov 30 19:16:02 2011 -0800
+
+    Departure Time is not auto-calculated, modified some field types
+
+commit ae2d73c67a191f49e77c6ad4dc5b7cd22265e3c7
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Wed Nov 30 17:59:41 2011 -0800
+
+    Minor change, auto-calculate Travel Distance from Google Maps web service
+
+commit b819916dba81325a50cd38b1ce663a2e0e2ac8b9
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Nov 29 18:24:20 2011 -0800
+
+    Cleaned up application
+
+commit 8ad628329f2137f9b86d0f7d4c0ec1bfafe2dfc8
+Author: Artiom Fine <art@finecomputing.com>
+Date:   Tue Nov 29 18:13:22 2011 -0800
+
+    To show on 

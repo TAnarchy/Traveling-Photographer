@@ -1,4 +1,5 @@
 module TravelDataHelper
+  
 	def get_directions_url(destinationAddress)
 	  google_link ="http://maps.google.com/maps?"
 	  current_url = google_link+"saddr="+string_to_url_parameter(TripIndependentInfo.first.home_address)
