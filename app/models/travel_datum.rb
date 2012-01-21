@@ -5,7 +5,6 @@ class TravelDatum < ActiveRecord::Base
 	
   def process_calculated_fields
     @independent = TripIndependentInfo.first
-    puts @independent.home_address
     home_to_school_wrapper= GoogleMapsWebServicesWrapper.new(@independent.home_address,self.address)
     splt= home_to_school_wrapper.distance.split(" ")
     splt2= home_to_school_wrapper.duration
