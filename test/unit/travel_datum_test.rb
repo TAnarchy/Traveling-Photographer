@@ -27,9 +27,7 @@ class TravelDatumTest < ActiveSupport::TestCase
      assert_equal 45, tester.distance_from_school_to_office
    end
    test "Total Trip gas cost" do
-     #puts tester.total_trip_gas_cost
-     #assert_equal 52.12, tester.total_trip_gas_cost
-     puts "Total trip cost not tested"
+     assert_equal "50.04", tester.total_trip_gas_cost.to_s
    end
    test "Time from school to office" do
      assert_equal 62, tester.time_from_school_to_office
