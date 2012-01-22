@@ -5,16 +5,17 @@ one:
   address: Brooklyn, NY
   school: Brooklyn School
   start_time: 2011-11-15 09:00:00
-  distance_from_home: 66
-  home_to_school_travel_time: 86
-  departure: 2011-11-15 17:45:25
-  distance_from_school_to_office: 1
-  time_from_school_to_office: MyString
-  gas_price: 9.99
-  total_trip_gas_cost: 9.99
+  distance_from_home: 63
+  home_to_school_travel_time: 79
+  departure: 2011-11-15 06:01:00
+  distance_from_school_to_office: 45
+  time_from_school_to_office: 62
+  gas_price: 9.85
+  total_trip_gas_cost: 52.12
   end_of_business_time: 2011-11-15 05:54:00
   master_or_assistant: Master
-  total_business_time: 12
+  total_business_time: 22
   hourly_rate: 9.69
+  is_traveling_to_office: "Yes"
 
 

@@ -1,3 +1,5 @@
+Run rake db:seed to load sample data
+
 An application developed by me in Ruby on rails, currently a work in progress.
 It is made for a school photographer who travels regulary and needs to keep track
 of a variety of things including, schools traveled, distance traveled, time. Currently

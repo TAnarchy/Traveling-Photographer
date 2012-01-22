@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- # http_basic_authenticate_with :name =>User.first.user_name, :password =>User.first.password
+  #http_basic_authenticate_with :name =>User.first.user_name, :password =>User.first.password
   
   # GET /users
   # GET /users.json

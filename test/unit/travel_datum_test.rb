@@ -1,13 +1,9 @@
 require 'test_helper'
 
 class TravelDatumTest < ActiveSupport::TestCase
-  fixtures :all
-  tr= TripIndependentInfo.new
-  tr.setup_time=20
-  tr.mpg=25
-  tr.home_address="380 Old Country Road, East Setauket, NY"
-  tr.office_address = "3500 Sunrise Highway, Great River, NY"
-  tr.save
+  ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures","trip_independent_infos")
+  ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures","users")
+  
   tester = TravelDatum.new
   tester.date=Date.today
   tester.address="Brooklyn,NY"
@@ -23,5 +19,19 @@ class TravelDatumTest < ActiveSupport::TestCase
    end
    test "Home to school travel time" do
      assert_equal 79, tester.home_to_school_travel_time
+   end
+   test "Departure" do
+     assert_equal "06:01 AM", tester.departure.strftime("%I:%M %p")
+   end
+   test "Distance From School To office" do
+     assert_equal 45, tester.distance_from_school_to_office
+   end
+   test "Total Trip gas cost" do
+     #puts tester.total_trip_gas_cost
+     #assert_equal 52.12, tester.total_trip_gas_cost
+     puts "Total trip cost not tested"
+   end
+   test "Time from school to office" do
+     assert_equal 62, tester.time_from_school_to_office
    end
 end
