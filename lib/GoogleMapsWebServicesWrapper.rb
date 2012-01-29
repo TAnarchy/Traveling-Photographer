@@ -3,12 +3,14 @@ require 'rexml/document'
 
 
 class GoogleMapsWebServicesWrapper
-	attr_accessor :duration, :distance
+	attr_accessor :duration, :distance, :status
   
   def initialize(org,dest)
     send_request(org,dest)
     parse_xml
-    format_duration_and_distance
+    if @status == "OK"
+      format_duration_and_distance
+    end
   end
 		
   def send_request(org,dest)
@@ -30,10 +32,13 @@ class GoogleMapsWebServicesWrapper
     doc = REXML::Document.new(@xml_result_set.body)
     result = []
     result2 = []
+    result3 = []
     REXML::XPath.each( doc, "//duration/text") { |element| result << element.text }
     @duration = result[0]
     REXML::XPath.each( doc, "//distance/text") { |element2| result2 << element2.text }
     @distance = result2[0]
+    REXML::XPath.each( doc, "//status") { |element3| result3 << element3.text }
+    @status = result3[1]
   end
 	
   def format_duration_and_distance

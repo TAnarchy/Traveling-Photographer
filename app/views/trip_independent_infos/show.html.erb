@@ -20,6 +20,11 @@
   <%= @trip_independent_info.office_address %>
 </p>
 
+<p>
+  <b>Daily Rate:</b>
+  <%=number_to_currency @trip_independent_info.daily_rate %>
+</p>
+
 
 <%= link_to 'Edit', edit_trip_independent_info_path(@trip_independent_info) %> |
 <%= link_to 'Back', trip_independent_infos_path %>

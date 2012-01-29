@@ -2,7 +2,20 @@ require 'GoogleMapsWebServicesWrapper'
 class TravelDatum < ActiveRecord::Base
   before_save :process_calculated_fields
   validates :address, :presence => true
+  validate :address_validation, :travel_path_validation
 
+  def address_validation
+    if GoogleMapsWebServicesWrapper.new(TripIndependentInfo.first.home_address,self.address).status== "NOT_FOUND"
+      self.errors[:base] << "Address not found"
+    end
+  end
+  
+  def travel_path_validation
+    if GoogleMapsWebServicesWrapper.new(TripIndependentInfo.first.home_address,self.address).status== "ZERO_RESULTS"
+      self.errors[:base] << "Cannot find a travel path between home and school"
+    end
+  end
+  
   def process_calculated_fields
     send_home_request
     set_home_values

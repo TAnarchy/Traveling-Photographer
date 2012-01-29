@@ -6,6 +6,7 @@
     <th>Mpg</th>
     <th>Home address</th>
     <th>Office address</th>
+    <th>Daily Rate</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= trip_independent_info.mpg %></td>
     <td><%= trip_independent_info.home_address %></td>
     <td><%= trip_independent_info.office_address %></td>
+    <td><%=number_to_currency trip_independent_info.daily_rate %></td>
     <td><%= link_to 'Show', trip_independent_info %></td>
     <td><%= link_to 'Edit', edit_trip_independent_info_path(trip_independent_info) %></td>
     <td><%= link_to 'Destroy', trip_independent_info, :confirm => 'Are you sure?', :method => :delete %></td>
