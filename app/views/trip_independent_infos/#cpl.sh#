@@ -1,0 +1,5 @@
+cd /home/trianarchy/Rails/PhotoTravel/app/views/travel_data
+jedit index.html.erb
+
+cd ../../controller/t
+
