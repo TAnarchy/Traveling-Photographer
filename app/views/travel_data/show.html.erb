@@ -73,12 +73,12 @@
 
 <p>
   <b>Total Business Time:</b>
-  <%= @travel_datum.total_business_time %>
+  <%= @travel_datum.formatted_total_business_time %>
 </p>
 
 <p>
   <b>Hourly rate:</b>
-  <%= @travel_datum.hourly_rate %>
+  <%=number_to_currency @travel_datum.hourly_rate %>
 </p>
 
 

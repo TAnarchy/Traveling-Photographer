@@ -24,7 +24,7 @@ class TravelDatum < ActiveRecord::Base
     unless self.gas_price.nil?
       traveling_to_office_check
     end
-    gas_calculations
+    #gas_calculations
     total_business_time_calculate
   end
 
@@ -69,7 +69,7 @@ def gas_calculations
    busHours =(self.end_of_business_time.hour-self.departure.hour).to_f
    busMin = ((self.end_of_business_time.min-self.departure.min).abs).to_f
    busMin2 = (busMin/60).to_f
-   self.hourly_rate=(125/(busHours+busMin2)).to_f.round(2)
+   self.hourly_rate=(@independent.daily_rate/(busHours+busMin2)).to_f.round(2)
   end
 
   def total_business_time_calculate
@@ -80,9 +80,9 @@ def gas_calculations
     else
       @total_bus_time=end_of_business_dt+self.home_to_school_travel_time.to_i.minutes-departure_dt
     end
-    puts "two time #{self.end_of_business_time-self.departure}"
     hours,minutes,seconds,frac = Date.day_fraction_to_time(@total_bus_time)
     self.total_business_time=hours*60+minutes
+    self.hourly_rate=((@independent.daily_rate-self.total_trip_gas_cost)/(self.total_business_time/60)).to_f.round(2)
   end
   
   def formatted_home_to_school_travel_time
@@ -91,6 +91,10 @@ def gas_calculations
   
   def formatted_school_to_office_travel_time
     formatted_time(self.time_from_school_to_office)
+  end
+
+  def formatted_total_business_time
+    formatted_time(self.total_business_time)
   end
   
   def formatted_time(time_to_format)
