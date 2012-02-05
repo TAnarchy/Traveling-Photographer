@@ -80,7 +80,7 @@ def gas_calculations
     else
       @total_bus_time=end_of_business_dt+self.home_to_school_travel_time.to_i.minutes-departure_dt
     end
-    hours,minutes,seconds,frac = Date.day_fraction_to_time(@total_bus_time)
+    hours,minutes,seconds,frac = Date.send(:day_fraction_to_time, @total_bus_time)
     self.total_business_time=hours*60+minutes
     self.hourly_rate=((@independent.daily_rate-self.total_trip_gas_cost)/(self.total_business_time/60)).to_f.round(2)
   end
