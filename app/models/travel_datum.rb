@@ -1,7 +1,7 @@
 require 'GoogleMapsWebServicesWrapper'
 class TravelDatum < ActiveRecord::Base
   before_save :process_calculated_fields
-  validates :address, :presence => true
+  validates :address,:school, :presence => true
   validate :address_validation, :travel_path_validation
 
   def address_validation
@@ -21,8 +21,11 @@ class TravelDatum < ActiveRecord::Base
     set_home_values
     send_school_request
     set_school_values
-    traveling_to_office_check
+    unless self.gas_price.nil?
+      traveling_to_office_check
+    end
     gas_calculations
+    total_business_time_calculate
   end
 
   def send_home_request
@@ -52,19 +55,34 @@ class TravelDatum < ActiveRecord::Base
       office_to_home_wrapper = GoogleMapsWebServicesWrapper.new(@independent.office_address,@independent.home_address)
       dist = office_to_home_wrapper.distance.split(" ")
       dist2 = dist[0]
+      @office_to_home_distance=dist2
+      @office_to_home_time=office_to_home_wrapper.duration
       @stuff = self.gas_price*(self.distance_from_school_to_office.to_i+self.distance_from_home.to_i+dist2.to_i)
     end
     if self.is_traveling_to_office !="Yes"
       @stuff = self.gas_price*(self.distance_from_home.to_i*2)
    end
+   self.total_trip_gas_cost= (@stuff/@independent.mpg).round(2)
   end
 
 def gas_calculations
-   self.total_trip_gas_cost= (@stuff/@independent.mpg).round(2)
    busHours =(self.end_of_business_time.hour-self.departure.hour).to_f
    busMin = ((self.end_of_business_time.min-self.departure.min).abs).to_f
    busMin2 = (busMin/60).to_f
    self.hourly_rate=(125/(busHours+busMin2)).to_f.round(2)
+  end
+
+  def total_business_time_calculate
+    end_of_business_dt = DateTime.parse(self.end_of_business_time.to_s)
+    departure_dt = DateTime.parse(self.departure.to_s)
+    if self.is_traveling_to_office== "Yes"
+      @total_bus_time=end_of_business_dt+@office_to_home_time.to_i.minutes-departure_dt
+    else
+      @total_bus_time=end_of_business_dt+self.home_to_school_travel_time.to_i.minutes-departure_dt
+    end
+    puts "two time #{self.end_of_business_time-self.departure}"
+    hours,minutes,seconds,frac = Date.day_fraction_to_time(@total_bus_time)
+    self.total_business_time=hours*60+minutes
   end
   
   def formatted_home_to_school_travel_time

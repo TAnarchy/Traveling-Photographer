@@ -3,6 +3,7 @@ require 'test_helper'
 class TravelDatumTest < ActiveSupport::TestCase
   ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures","trip_independent_infos")
   ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures","users")
+  ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/test/fixtures","travel_data")
   
   tester = TravelDatum.new
   tester.date=Date.today
