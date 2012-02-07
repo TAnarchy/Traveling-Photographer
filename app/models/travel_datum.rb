@@ -68,7 +68,7 @@ class TravelDatum < ActiveRecord::Base
     end_of_business_dt = DateTime.parse(self.end_of_business_time.to_s)
     departure_dt = DateTime.parse(self.departure.to_s)
     if self.is_traveling_to_office== "Yes"
-      @total_bus_time=end_of_business_dt+@office_to_home_time.to_i.minutes-departure_dt
+      @total_bus_time=end_of_business_dt+self.time_from_school_to_office.to_i.minutes+@office_to_home_time.to_i.minutes-departure_dt
     else
       @total_bus_time=end_of_business_dt+self.home_to_school_travel_time.to_i.minutes-departure_dt
     end
