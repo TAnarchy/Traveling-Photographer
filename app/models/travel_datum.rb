@@ -24,7 +24,6 @@ class TravelDatum < ActiveRecord::Base
     unless self.gas_price.nil?
       traveling_to_office_check
     end
-    #gas_calculations
     total_business_time_calculate
   end
 
@@ -63,13 +62,6 @@ class TravelDatum < ActiveRecord::Base
       @stuff = self.gas_price*(self.distance_from_home.to_i*2)
    end
    self.total_trip_gas_cost= (@stuff/@independent.mpg).round(2)
-  end
-
-def gas_calculations
-   busHours =(self.end_of_business_time.hour-self.departure.hour).to_f
-   busMin = ((self.end_of_business_time.min-self.departure.min).abs).to_f
-   busMin2 = (busMin/60).to_f
-   self.hourly_rate=(@independent.daily_rate/(busHours+busMin2)).to_f.round(2)
   end
 
   def total_business_time_calculate
