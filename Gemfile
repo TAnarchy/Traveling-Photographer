@@ -4,13 +4,7 @@ gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-group :test do
- gem 'sqlite3'
-end
-group :development do
- gem 'pg'
-end
+gem 'pg'
 
 gem 'json'
 
