@@ -19,10 +19,10 @@ class TravelDatumTest < ActiveSupport::TestCase
     assert_equal 63, tester.distance_from_home
    end
    test "Home to school travel time" do
-     assert_equal 79, tester.home_to_school_travel_time
+     assert_equal 80, tester.home_to_school_travel_time
    end
    test "Departure" do
-     assert_equal "06:01 AM", tester.departure.strftime("%I:%M %p")
+     assert_equal "06:00 AM", tester.departure.strftime("%I:%M %p")
    end
    test "Distance From School To office" do
      assert_equal 45, tester.distance_from_school_to_office

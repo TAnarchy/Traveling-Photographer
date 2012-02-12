@@ -53,6 +53,7 @@ class TravelDataController < ApplicationController
         format.html { render :action => "new" }
         format.json { render :json => @travel_datum.errors, :status => :unprocessable_entity }
       end
+      format.js
     end
   end
 
