@@ -4,7 +4,7 @@ gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-gem 'pg'
+gem 'sqlite3'
 
 gem 'json'
 
@@ -17,6 +17,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "nifty-generators", :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -30,3 +31,5 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 #gem 'kaminari'
+gem "mocha", :group => :test
+gem "bcrypt-ruby", :require => "bcrypt"

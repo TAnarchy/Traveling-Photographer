@@ -1,6 +1,13 @@
-<h1>Home#index</h1>
-<%= link_to "Travel Data", travel_data_path %>
-<%= link_to "Independent Data", trip_independent_infos_path %>
-<%= link_to "Users", users_path %>
+<h1>Welcome</h1>
 
+    <% if logged_in? %>  
+      Welcome <%= current_user.username %>! Not you?  
+      <%= link_to "Travel Data", travel_data_path %>
+<%= link_to "Independent Data", trip_independent_infos_path %>
+      <%= link_to "Log out", logout_path %>  
+    <% else %>  
+      <%= link_to "Sign up", signup_path %> or  
+      <%= link_to "log in", login_path %>.  
+      
+    <% end %>  
 

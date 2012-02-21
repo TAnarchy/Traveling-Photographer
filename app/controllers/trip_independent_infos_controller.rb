@@ -1,7 +1,5 @@
 class TripIndependentInfosController < ApplicationController
-  #http_basic_authenticate_with :name =>User.first.user_name, :password =>User.first.password
-  # GET /trip_independent_infos
-  # GET /trip_independent_infos.json
+   before_filter :login_required
   def index
     @trip_independent_infos = TripIndependentInfo.all
 

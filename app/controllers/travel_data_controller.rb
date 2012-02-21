@@ -1,8 +1,5 @@
 class TravelDataController < ApplicationController
-  #http_basic_authenticate_with :name =>User.first.user_name, :password =>User.first.password
-	
-  # GET /travel_data
-  # GET /travel_data.json
+   before_filter :login_required
   def index
     @travel_data = TravelDatum.order("Date")
 

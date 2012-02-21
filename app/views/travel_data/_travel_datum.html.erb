@@ -1,6 +1,6 @@
 <tr id=<%= travel_datum.id %>>
     <td><%= counter+1 %></td>
-    <td><%= travel_datum.date.strftime("%m/%d/%Y") %></td>
+    <td style = "color:blue"><%= travel_datum.date.strftime("%m/%d/%Y") %></td>
     <td><%=link_to travel_datum.address, get_directions_url(travel_datum.address) %></td>
     <td><%= travel_datum.school %></td>
     <td><%= travel_datum.start_time.strftime("%I:%M %p") %></td>

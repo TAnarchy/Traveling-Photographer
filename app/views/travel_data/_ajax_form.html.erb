@@ -1,0 +1,16 @@
+<%= form_for(TravelDatum.new, :remote => :true) do |f| %>
+<tr id="Input">
+    <td>New</td>
+    <td>Date: <%= f.date_select :date %></td>
+    <td><%= f.text_field :address %></td>
+    <td><%= f.text_field :school %></td>
+    <td><%= f.time_select :start_time %></td>
+    <td> <%= f.text_field :gas_price %></td>
+    <td><%= f.time_select :end_of_business_time %></td>
+    <td><%= f.select :master_or_assistant, ['Master','Assistant'] %></td>
+    <td><%= f.select :is_traveling_to_office, ['Yes','No'] %></td>
+    <td><%= f.submit "Save" %></td>
+    <td>Edit</td>
+    <td>Clear</td>
+  </tr>
+  <% end %>

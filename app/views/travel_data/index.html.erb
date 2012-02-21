@@ -1,35 +1,38 @@
-<h1>Travel Data</h1>
-<table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
- <thead>
-  <tr>
-    <th>#</th>
-    <th>Date</th>
-    <th>Address</th>
-    <th>School</th>
-    <th>Start Time</th>
-    <th>Distance from home</th>
-    <th>Travel time</th>
-    <th>Departure</th>
-    <th>Distance from school to office</th>
-    <th>Time from school to office</th>
-    <th>Gas price</th>
-    <th>Gas total</th>
-    <th>End of business</th>
-    <th>Position</th>
-    <th>Traveling to office</th>
-    <th>Total business time</th>
-    <th>Hourly rate</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr></thead>
-  <tbody>
-<% @travel_data.each_with_index do |travel_datum, counter| %>
-  <%= render travel_datum, :counter=> counter%>
-<% end %>
-</tbody></table>
 
-<br />
+  <h1>Travel Data</h1>
+  <%= link_to 'New Travel Data', new_travel_datum_path %>
+  <%= link_to 'Logout', logout_path %>
+  <table id='example' cellpadding='2' cellspacing='2' border = '1' class='display'>
+   <thead>
+    <tr>
+      <th>#</th>
+      <th>Date</th>
+      <th>Address</th>
+      <th>School</th>
+      <th>Start Time</th>
+      <th>Distance from home</th>
+      <th>Travel time</th>
+      <th>Departure</th>
+      <th>Distance from school to office</th>
+      <th>Time from school to office</th>
+      <th>Gas price</th>
+      <th>Gas total</th>
+      <th>End of business</th>
+      <th>Position</th>
+      <th>Traveling to office</th>
+      <th>Total business time</th>
+      <th>Hourly rate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr></thead>
+    <tbody>
+  <% @travel_data.each_with_index do |travel_datum, counter| %>
+    <%= render travel_datum, :counter=> counter%>
+  <% end %>
+  </tbody></table>
+  <%= render 'ajax_form' %>
+  </table>
+  <br />
 
-<%= link_to 'New Travel Data', new_travel_datum_path %>
-<%= link_to 'Logout', logout_path %>
+
