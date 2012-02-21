@@ -16,16 +16,16 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, "School Address" %><br />
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :school %><br />
+    <%= f.label :school, "School name" %><br />
     <%= f.text_field :school %>
   </div>
   <div class="field">
     <%= f.label :start_time, "Start Time" %><br />
-    <%= f.time_select :start_time %>
+    <%= f.time_select :start_time, {:ampm => true}%>
   </div>
   <div class="field">
     <%= f.label :gas_price, "Gas Price:" %><br />
@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :end_of_business_time, "End of Business:" %><br />
-    <%= f.time_select :end_of_business_time %>
+    <%= f.time_select :end_of_business_time, {:ampm => true} %>
   </div>
   <div class="field">
     <%= f.label :master_or_assistant, "Position" %><br />
-    <%= f.select :master_or_assistant, ['Master','Assistant'] %>
+    <%= f.select :master_or_assistant, ['Master','Assistant','Photographer','PDC'] %>
   </div>
    <div class="field">
     <%= f.label :is_traveling_to_office, "Traveling to office?" %><br />
