@@ -4,8 +4,8 @@ gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
 
 gem 'json'
 
@@ -34,3 +34,4 @@ gem "nifty-generators", :group => :development
 #gem 'kaminari'
 gem "mocha", :group => :test
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'to_xls', '~> 1.5.1'

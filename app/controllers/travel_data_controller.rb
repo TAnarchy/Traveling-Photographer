@@ -6,6 +6,8 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @travel_data }
+      format.xls { send_data @travel_data.to_xls, :filename => 'travel_data.xls' }
+      
     end
   end
 
