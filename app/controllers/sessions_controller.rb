@@ -11,8 +11,9 @@ class SessionsController < ApplicationController
         format.xml {render :xml => {:result => "1"}.to_xml}
       end
     else
+      flash.now[:alert] = "Invalid login or password."
       respond_to do |format|
-        format.html {flash.now[:alert] = "Invalid login or password.", render :action => 'new'}
+        format.html {render :action => 'new'}
         format.xml {render :xml => {:result =>"0"}.to_xml}
       end
     end
