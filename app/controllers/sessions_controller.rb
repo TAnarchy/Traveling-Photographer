@@ -8,16 +8,21 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       respond_to do |format|
         format.html {redirect_to_target_or_default root_url, :notice => "Logged in successfully."}
-        format.xml {render :xml => {:result => "OK"}.to_xml}
+        format.xml {render :xml => {:result => "1"}.to_xml}
       end
     else
-      flash.now[:alert] = "Invalid login or password."
-      render :action => 'new'
+      respond_to do |format|
+        format.html {flash.now[:alert] = "Invalid login or password.", render :action => 'new'}
+        format.xml {render :xml => {:result =>"0"}.to_xml}
+      end
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "You have been logged out."
+    respond_to do |format|
+      format.html {redirect_to root_url, :notice => "You have been logged out."}
+      format.xml  {render :xml => {:result => "1"}.to_xml}
+    end
   end
 end
