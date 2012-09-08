@@ -6,6 +6,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @travel_data }
+      format.xml { render :xml => @travel_data }
       format.xls { send_data @travel_data.to_xls, :filename => 'travel_data.xls' }
       
     end
@@ -19,6 +20,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @travel_datum }
+      format.xml { render :xml => @travel_data }
     end
   end
 
@@ -32,6 +34,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @travel_datum }
+      format.xml { render :xml => @travel_data }
     end
   end
 
@@ -48,9 +51,11 @@ class TravelDataController < ApplicationController
       if @travel_datum.save
       	format.html { redirect_to @travel_datum, :notice => 'Travel date was successfully created.' }
         format.json { render :json => @travel_datum, :status => :created, :location => @travel_datum }
+        format.xml { render :xml => @travel_datum, :status => :created, :location => @travel_datum }
       else
         format.html { render :action => "new" }
         format.json { render :json => @travel_datum.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @travel_datum.errors, :status => :unprocessable_entity }
       end
       format.js
     end
@@ -64,9 +69,11 @@ class TravelDataController < ApplicationController
       if @travel_datum.update_attributes(params[:travel_datum])
         format.html { redirect_to @travel_datum, :notice => 'Travel datum was successfully updated.' }
         format.json { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @travel_datum.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @travel_datum.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -81,6 +88,7 @@ class TravelDataController < ApplicationController
     respond_to do |format|
       format.html { redirect_to travel_data_url }
       format.json { head :ok }
+      format.xml { head :ok }
       format.js
     end
   end

@@ -1,0 +1,28 @@
+
+<tr id=<%= travel_datum.id %>>
+    <td><%= counter+1 %></td>
+    <td style = "color:blue"><%= travel_datum.date.strftime("%m/%d/%Y") %></td>
+    <td><%=link_to travel_datum.address, get_directions_url(travel_datum.address) %></td>
+    <td><%= travel_datum.school %></td>
+    <td><%= travel_datum.start_time.strftime("%I:%M %p") %></td>
+    <td><%= travel_datum.distance_from_home %></td>
+    <td><%= travel_datum.formatted_home_to_school_travel_time %></td>
+    <% if defined?(travel_datum.time_from_school_to_office) %>
+    <td><%= travel_datum.departure.strftime("%I:%M %p") %></td>
+    <% else %>
+    <td><%= travel_datum.start_time.strftime("%I:%M %p")%></td>
+    <% end %>
+    <td><%= travel_datum.distance_from_school_to_office %></td>
+    <td><%= travel_datum.formatted_school_to_office_travel_time %></td>
+    <td><%=number_to_currency travel_datum.gas_price %></td>
+    <td><%=number_to_currency travel_datum.total_trip_gas_cost %></td>
+    <td><%= travel_datum.end_of_business_time.strftime("%I:%M %p") %></td>
+    <td><%= travel_datum.master_or_assistant %></td>
+    <td><%= travel_datum.is_traveling_to_office %></td>
+    <td><%= travel_datum.formatted_total_business_time %></td>
+    <td><%=number_to_currency  travel_datum.hourly_rate %></td>
+    <td><%= link_to 'Show', travel_datum %></td>
+    <td><%= link_to 'Edit', edit_travel_datum_path(travel_datum) %></td>
+    <td><%= link_to 'Destroy', travel_datum, :confirm => 'Are you sure?', :method => :delete, :remote=>:true%></td>
+    <td><input type="submit" value="Submit"/></td>
+  </tr>

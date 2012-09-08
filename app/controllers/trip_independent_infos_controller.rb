@@ -6,6 +6,7 @@ class TripIndependentInfosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @trip_independent_infos }
+      format.xml { render :xml => @trip_independent_infos }
     end
   end
 
@@ -17,6 +18,7 @@ class TripIndependentInfosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @trip_independent_info }
+      format.xml { render :xml => @trip_independent_infos }
     end
   end
 
@@ -28,6 +30,7 @@ class TripIndependentInfosController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @trip_independent_info }
+      format.xml { render :xml => @trip_independent_infos }
     end
   end
 
@@ -45,9 +48,11 @@ class TripIndependentInfosController < ApplicationController
       if @trip_independent_info.save
         format.html { redirect_to @trip_independent_info, :notice => 'Trip independent info was successfully created.' }
         format.json { render :json => @trip_independent_info, :status => :created, :location => @trip_independent_info }
+        format.xml { render :xml => @trip_independent_info, :status => :created, :location => @trip_independent_info }
       else
         format.html { render :action => "new" }
         format.json { render :json => @trip_independent_info.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @trip_independent_info.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,9 +66,11 @@ class TripIndependentInfosController < ApplicationController
       if @trip_independent_info.update_attributes(params[:trip_independent_info])
         format.html { redirect_to @trip_independent_info, :notice => 'Trip independent info was successfully updated.' }
         format.json { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @trip_independent_info.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @trip_independent_info.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,6 +84,7 @@ class TripIndependentInfosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to trip_independent_infos_url }
       format.json { head :ok }
+      format.xml { head :ok }
     end
   end
 end
