@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       respond_to do |format|
         format.html {redirect_to_target_or_default root_url, :notice => "Logged in successfully."}
-        format.xml {head :ok}
+        format.xml {render :xml => {:result => "OK"}.to_xml}
       end
     else
       flash.now[:alert] = "Invalid login or password."
