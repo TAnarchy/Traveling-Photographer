@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
       respond_to do |format|
         format.html {redirect_to_target_or_default root_url, :notice => "Logged in successfully."}
         format.xml {render :xml => {:result => "1"}.to_xml}
-        format.json {render :json => {:result => "1"}.to_json}
+        format.json {render :json => {:result => "100"}.to_json}
       end
     else
       flash.now[:alert] = "Invalid login or password."
       respond_to do |format|
         format.html {render :action => 'new'}
         format.xml {render :xml => {:result =>"0"}.to_xml}
-        format.json {render :json => {:result => "1"}.to_json}
+        format.json {render :json => {:result => "0"}.to_json}
       end
     end
   end
