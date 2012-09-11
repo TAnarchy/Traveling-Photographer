@@ -66,7 +66,7 @@ class TripIndependentInfosController < ApplicationController
     respond_to do |format|
       if @trip_independent_info.update_attributes(params[:trip_independent_info])
         format.html { redirect_to @trip_independent_info, :notice => 'Trip independent info was successfully updated.' }
-        format.json { head :ok }
+        format.json {render :json => {:result => "1"}.to_json}
         format.xml { head :ok }
       else
         format.html { render :action => "edit" }
