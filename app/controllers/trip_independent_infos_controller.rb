@@ -29,7 +29,8 @@ class TripIndependentInfosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @trip_independent_info }
+      #format.json { render :json => @trip_independent_info }
+      format.json {render :json => {:result => "100"}.to_json}
       format.xml { render :xml => @trip_independent_infos }
     end
   end
