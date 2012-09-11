@@ -7,7 +7,7 @@ PhotoTravel::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
-  match 'ajax_submit'/:id/ =
+  #match 'ajax_submit'/:id/ =
 
   resources :sessions
 
