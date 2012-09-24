@@ -35,3 +35,4 @@ gem "nifty-generators", :group => :development
 gem "mocha", :group => :test
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'to_xls', '~> 1.5.1'
+gem 'ssl_requirement'
