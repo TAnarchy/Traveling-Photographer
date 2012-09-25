@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  force_ssl
+    
   def new
   end
 
@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
       end
     end
   end
+
 
   def destroy
     session[:user_id] = nil
