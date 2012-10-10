@@ -27,12 +27,44 @@
       <th></th>
     </tr></thead>
     <tbody>
+      <% last =1 %>
   <% @travel_data.each_with_index do |travel_datum, counter| %>
     <%= render travel_datum, :counter=> counter%>
+    <%last = counter %>
   <% end %>
-  </tbody></table>
-  <%= render 'ajax_form' %>
-  </table>
+  <tr>
+      <th><%= last+1 %></th>
+      <!-- <form id="newform" action="/travel_data" method="post">  -->
+      <th><input class=newfieild type="text" id="newdate" name="travel_datum[date]"></th>
+      <th><input class=newfieild type="text" id="newaddress" name="travel_datum[address]"></th>
+      <th><input class=newfieild type="text" id="newschool" name="travel_datum[school]"></th>
+      <th><input class=newfieild type="time" id="newstarttime" name="travel_datum[start_time]"></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th><input class=newfieild type="text" id="newgasprice" name="travel_datum[gas_price]"></th>
+      <th></th>
+      <th><input class=newfieild  type="text" id="newendofbusinesstime" name="travel_datum[end_of_business_time]"></th>
+      <th><select class=newfieild type="text" id="newposition" name="travel_datum[master_or_assistant]">
+        <option value="Master">Master</option>
+        <option value="Assistant">Assistant</option>
+        <option value="Photographer">Photographer</option>
+        <option value="PDC">PDC</option>
+      </select></th>
+      <th><select class=newfieild  type="text" id="newendofbusinesstime" name="travel_datum[is_traveling_to_office]"> 
+        <option value="Yes">Yes</option>
+        <option value="No">No</option></th>
+      </select>
+      <th></th>
+      <th></th>
+      <th><input type="checkbox" id="submitbutton" value="Submit"></th>
+    <!-- </form> -->
+      <th></th>
+      <th></th>
+    </tr>
+  </tbody>
   <br />
  <%= link_to 'Export to Excel', url_for(:format => 'xls') %>
 

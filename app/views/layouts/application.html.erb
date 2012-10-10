@@ -4,12 +4,31 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
-     <script type = 'text/javascript'> $(document).ready(function(){
+     <script type = 'text/javascript'> 
+       $(document).ready(function(){
+         $('input[name="travel_datum[date]"]').datepicker();
+
+      
+      $("#submitbutton").click(function() {
+        /*$.ajax({data: {'travel_datum[date}': '9/25/2012'}}); */
+        var rr = {};
+        $(".newfieild").each(function() {rr[$(this).attr('name')] =$(this).val();});
+        console.log("INPUT="+JSON.stringify(rr));
+         $.ajaxSetup({
+         url: "/travel_data.json",
+         type: "POST"
+        });
+        $.ajax({data : rr});
+        /* $("#newform").submit(); */
+        window.location.reload(); 
+         });
+      
         $(".display").dataTable({
             "bJQueryUI" : true,
             "sPaginationType" : "full_numbers",
             "oLanguage": {"sSearch": "Filter:"}
-        });})(jQuery);</script>
+        });});
+        </script>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
