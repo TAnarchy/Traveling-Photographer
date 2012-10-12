@@ -10,7 +10,6 @@
 
       
       $("#submitbutton").click(function() {
-        /*$.ajax({data: {'travel_datum[date}': '9/25/2012'}}); */
         var rr = {};
         $(".newfieild").each(function() {rr[$(this).attr('name')] =$(this).val();});
         console.log("INPUT="+JSON.stringify(rr));
@@ -22,8 +21,54 @@
         /* $("#newform").submit(); */
         window.location.reload(); 
          });
-      
-        $(".display").dataTable({
+      $('.existingdata').click(function(){
+        if ($(this).hasClass("selectedtoedit")){
+          otherKlass();
+          return true;
+        }
+        $(this).addClass("selectedtoedit");
+        datetoedit=$(this).children(".currentdate").text();
+        $(this).children(".currentdate").text("");
+        $(this).children(".currentdate").prepend("<input type='text' id='editdate' name='travel_datum[date]' value="+datetoedit+">");
+        $('input[name="travel_datum[date]"]').datepicker();
+
+        addresstoedit= $(this).children(".currentaddress").text();
+        console.log("Current address "+addresstoedit);
+        $(this).children(".currentaddress").text("");
+        $(this).children(".currentaddress").prepend("<input type='text' id='editaddress' name='travel_datum[address]' value='"+addresstoedit+"''>");
+
+        schooltoedit= $(this).children(".currentschool").text();
+        console.log(addresstoedit);
+        $(this).children(".currentschool").text("");
+        $(this).children(".currentschool").prepend("<input type='text' id='editschool' name='travel_datum[school]' value='"+schooltoedit+"''>");
+
+        starttimetoedit= $(this).children(".currentstarttime").text();
+        $(this).children(".currentstarttime").text("");
+        $(this).children(".currentstarttime").prepend("<input type='text' id='editadstarttime' name='travel_datum[start_time]' value='"+starttimetoedit+"''>");
+
+        gaspricetoedit= $(this).children(".currentgasprice").text();
+        $(this).children(".currentgasprice").text("");
+        $(this).children(".currentgasprice").prepend("<input type='text' id='editadgasprice' name='travel_datum[gas_price]' value='"+gaspricetoedit+"''>");
+
+        positiontoedit= $(this).children(".currentposition").text();
+        console.log("position to edit "+positiontoedit);
+        $(this).children(".currentposition").text("");
+        $(this).children(".currentposition").prepend("<select type='text' id='editposition' name='travel_datum[master_or_assistant]'> <option value='Master'>Master</option><option value='Assistant'>Assistant</option><option value='Photographer'>Photographer</option><option value='PDC'>PDC</option></select>");
+
+        $("#editposition").children().map(function() {
+          if (this.value == positiontoedit) {
+            $(this).attr("selected","selected");
+          }
+          
+        });
+
+
+
+      });
+      function otherKlass(){
+        alert($(this).children(".currentstarttime").text());
+      }
+        $("#example").dataTable({
             "bJQueryUI" : true,
             "sPaginationType" : "full_numbers",
             "oLanguage": {"sSearch": "Filter:"}
